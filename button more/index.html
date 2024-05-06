@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button_26-container {
+  z-index: 999;
+  border-radius: 50px;
+}
+
+.button_26-wrapper {
+  position: relative;
+  border-radius: 15px;
+}
+
+.button_26 {
+  display: block;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  background-color: rgb(40, 37, 37);
+  color: white;
+  border-radius: 15px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.button_26-bg {
+  position: absolute;
+  top: -5%;
+  left: -2%;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: linear-gradient(
+    90deg,
+    #ff8038 0%,
+    #ff0099 30.43%,
+    #00ebeb 68.23%,
+    #db00ff 100%
+  );
+  background-size: 800% 800%;
+  border-radius: 15px;
+  animation: AnimateBorder 1s ease infinite;
+  -webkit-animation: AnimateBorder 1s ease infinite;
+  -moz-animation: AnimateBorder 1s ease infinite;
+  z-index: -1;
+  transform: translate(-2px, -2px);
+  transition: filter 1s ease-in;
+}
+
+.button_26-wrapper:hover .button_3-bg {
+  filter: blur(10px);
+  transition: filter 0.4s ease-in;
+}
+
+@-webkit-keyframes AnimateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="button_26-container">
+        <div class="button_26-wrapper">
+          <button class="button_26" type="button">Buy Now</button>
+          <div class="button_26-bg"></div>
+        </div>
+      </div>
+</body>
+</html>

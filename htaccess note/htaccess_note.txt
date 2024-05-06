@@ -1,0 +1,103 @@
+Creating Error Documents:
+ErrorDocument 400 /errors/bad-request.html
+
+ErrorDocument 401 /errors/auth-reqd.html
+
+ErrorDocument 403 /errors/forbid.html
+
+ErrorDocument 404 /errors/not-found.html
+
+ErrorDocument 500 /errors/server-err.html
+
+
+
+Passwords with CLI
+> htpasswd -c /usr/local/blah/.htpasswd jamesbrown
+
+Quick .htaccess Tutorial: How to use .htpasswd with .htaccess
+
+AuthUserFile /usr/local/etc/.htpasswd
+
+AuthName "Name of Secure Area"
+
+AuthType Basic
+
+<Limit GET POST>
+
+require valid-user
+
+</Limit>
+
+.htaccess basics – Directives that block a referrer depend on the mod_rewrite engine.
+RewriteEngine on
+
+RewriteCond % ^http://.*forinstance.com [NC,OR]
+
+RewriteCond % ^http://.* forinstance2.com [NC,OR]
+
+RewriteCond % ^http://.* forinstance3.com [NC]
+
+RewriteRule .* - [F]
+
+Blacklisting by IP:
+
+order allow,deny
+
+deny from 444.33.55.6
+
+deny from 735.34.6.
+
+allow from all
+
+Whitelisting by IP:
+order deny,allow
+
+deny from all
+
+allow from 111.22.3.4
+
+allow from 789.56.4.
+
+Domain names instead of IP addresses:
+
+
+order allow,deny
+
+deny from forinstance.com
+
+allow from all
+
+
+.htaccess basics – Directives that block a referrer depend on the mod_rewrite engine.
+RewriteEngine on
+
+RewriteCond % ^http://.*forinstance.com [NC,OR]
+
+RewriteCond % ^http://.* forinstance2.com [NC,OR]
+
+RewriteCond % ^http://.* forinstance3.com [NC]
+
+RewriteRule .* - [F]
+
+Redirect or Rewrite:
+You can change a URL with .htaccess directives in a couple of ways — the Redirect command and the mod_rewrite engine. The Redirect command tells the browser which other URL it should be looking out for. The mod_rewrite tool will normally “translate” the URL that’s in the request. Turns it into something the file system or CMS can understand. Then, it treats the request as though the translated URL was the one that was requested.
+
+From the perspective of the web browser it’s business as usual. It gets the content it requested and carries on as if nothing happened.
+
+The mod_rewrite tool is also able to produce 301 redirects that work like the Redirect command. But with a greater number of possible rules instead. Including elaborate pattern matching and rewriting instructions – which is beyond what Redirect can do.
+
+
+Basic Page Redirect – .htaccess guide:
+Redirect 301 /relative-url.html http://forinstance.com/full-url.html
+
+Block Hotlinking – .htaccess Guide:
+
+RewriteEngine on
+
+RewriteCond % !^$
+
+RewriteCond % !^http://(www.)?forinstance.com/.*$ [NC]
+
+RewriteRule .(gif|jpg|jpeg|png|js|css)$ - [F]
+
+

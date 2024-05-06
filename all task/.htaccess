@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Redirect temp.ariful.live to ariful.live
+RewriteCond %{HTTP_HOST} ^temp\.ariful\.live$ [NC]
+RewriteRule ^(.*)$ https://ariful.live/ [R=301,L]
+
+# Redirect www.temp.ariful.live to ariful.live
+RewriteCond %{HTTP_HOST} ^www\.temp\.ariful\.live$ [NC]
+RewriteRule ^(.*)$ https://ariful.live/ [R=301,L]
+
+# Custom error handler for 404 errors
+ErrorDocument 404 /

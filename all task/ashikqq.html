@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8" />
+    <title>PVK Games</title>
+    <link rel="canonical" href="index.html" />
+
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      async
+      custom-element="amp-accordion"
+      src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-carousel"
+      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-social-share"
+      src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- AMP boilerplate styles -->
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+
+    <style amp-custom>
+      :root {
+        --color-primary: #005af0;
+        --color-text-light: #fff;
+      }
+      /* a custom sharing icon */
+      amp-social-share.custom-style {
+        background-color: #008080;
+        background-image: url("https://raw.githubusercontent.com/google/material-design-icons/master/social/1x_web/ic_share_white_25dp.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .red_bg {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  background-color: #eacf35;
+  display: flex;
+ align-items: center;
+  bottom: 0;
+}
+.mobile_navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+ display: none;
+
+}
+
+.divider {
+  border-right: 1px solid black;
+  height: 25px;
+}
+.divider_1 {
+  margin-left: 23vw;
+}
+.divider_2 {
+  margin-left: 19vw;
+}
+.divider_3 {
+  margin-left: 13vw;
+}
+.divider_4 {
+  margin-left: 21vw;
+}
+
+@media screen and (max-width: 900px) {
+        .mobile_navbar{
+          display: flex;
+          height: 60px;
+          
+          justify-content: space-evenly;
+          align-items: center;
+        
+          flex-wrap: wrap;
+        }
+        .mobile_navbar_ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+         
+         z-index: 10000;
+         
+         
+        }
+        .mobile_navbar_icon{
+height: 40px;
+width: 40px;
+        }
+        .mobile_navbar_text{
+          text-decoration: none;
+          font-size: 3vw;
+          color: #fff;
+          font-weight: 800;
+        }
+        
+        
+      }
+      @media screen and (min-width: 600px){
+        .mobile_navbar_text{
+          font-size: 15px;
+        }
+        .divider_2 {
+  margin-left: 21vw;
+}
+.divider_3 {
+  margin-left: 14vw;
+}
+      }
+      amp-social-share.rounded {
+        border-radius: 50%;
+        background-size: 60%;
+      }
+      .games_card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .other_details {
+        border-bottom: 2px solid #c9c8c9;
+      }
+      .card {
+        max-width: 140px;
+      }
+      .minus_button, .plus_button{
+border: none;
+      }
+      .progress-container {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .details {
+        border-top: 2px solid #c9c8c9;
+        border-bottom: 2px solid #c9c8c9;
+      }
+      .progress-bar-container {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+      }
+      .gray_text {
+        color: #585656;
+      }
+      .green_text {
+        color: rgb(22, 187, 118);
+        cursor: pointer;
+      }
+      .progress-bar {
+        background-color: #f0f0f0;
+        width: 100%;
+        border-radius: 5px;
+        height: 5px;
+        margin-right: 10px;
+        position: relative;
+      }
+
+      .progress {
+        border-radius: 5px;
+        height: 5px;
+        background-color: rgb(22, 187, 118);
+        color: white;
+        text-align: center;
+        line-height: 10px;
+        width: 90.16%;
+      }
+      p {
+        text-align: justify;
+      }
+      .rating {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        border-top: 2px solid #747274;
+        width: 100%;
+        margin: 50px 0;
+        flex-wrap: wrap;
+      }
+      .percentage {
+        margin-left: 5px;
+      }
+
+      .star-icon {
+        margin-right: 5px;
+        color: #ffd700;
+      }
+      .learn_more {
+        padding: 10px 0;
+        color: rgb(22, 187, 118);
+        cursor: pointer;
+        border-bottom: 2px solid #c9c8c9;
+      }
+      .main_profie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .main_profie_2 {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .topbar {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        background-color: #cecdcd;
+        height: 30px;
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .social_buttons {
+        min-width: 150px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .form_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .progress_bar {
+        width: 100%;
+      }
+      .cod_btn {
+        border: none;
+        border-radius: 4px;
+      }
+      .social_link {
+        text-decoration: none;
+        color: #585656;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .moving_text {
+        width: 100%;
+        color: #585656;
+      }
+      .moving_text_container {
+        flex: 1;
+      }
+      .card {
+        text-align: center;
+      }
+      .header {
+        display: flex;
+        background-color: #fff;
+        justify-content: space-between;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-bottom: 2px solid #cecdcd;
+        align-items: center;
+      }
+      .searchbar_container {
+        display: flex;
+        gap: 5px;
+        flex: 1;
+        color: #585656;
+        align-items: center;
+      }
+      .secondary_profile {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        color: #747274;
+      }
+      .divider {
+        height: 20px;
+        border-left: 2px solid #585656;
+      }
+      .upper_cart {
+        display: flex;
+        gap: 15px;
+      }
+      .searchbar {
+        border: 2px solid #585656;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        color: #585656;
+        padding: 5px 20px;
+      }
+      .searchbar_input {
+        border: none;
+        flex: 1;
+        outline: none;
+        padding: 0 0 0 10px;
+      }
+      .section_two {
+        flex: 1;
+        margin: 15px 50px;
+      }
+      .devices_text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .header_btn_1 {
+        font-weight: 900;
+        color: rgb(22, 187, 118);
+        padding: 5px 10px;
+        background-color: transparent;
+        border: 2px solid;
+        border-radius: 5px;
+      }
+      .header_btn_2 {
+        font-weight: 900;
+        color: #fff;
+        padding: 5px 10px;
+        background-color: rgb(22, 187, 118);
+        border: 2px solid;
+        border-radius: 5px;
+      }
+      .location {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .bold_text {
+        font-weight: 600;
+      }
+      .navbar {
+        width: 100%;
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .container {
+        margin-top: 150px;
+        margin-bottom: 50px;
+        margin-right: 5vw;
+        margin-left: 5vw;
+      }
+      .bc_text {
+        text-decoration: none;
+        color: rgb(22, 187, 118);
+      }
+      .breadcrumps {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .marquee-container {
+        width: 85vw;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .marquee-content {
+        animation: marquee 10s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .main_content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        width: 100%;
+      }
+      .main_subheading {
+        color: #524f52;
+      }
+      .left_sidebar,
+      .right_sidebar {
+        width: 20%;
+        min-width: 230px;
+      }
+
+      .border {
+        border: 2px solid;
+      }
+      .left_sidebar {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 4px 6px;
+      }
+      .middle_content {
+        flex: 1;
+        min-width: 300px;
+      }
+      @media screen and (max-width: 924px) {
+        .right_sidebar {
+          flex: 1;
+          min-width: 100%;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        .left_sidebar {
+          flex: 1;
+          max-width: 90%;
+        }
+      }
+      @media screen and (max-width: 750px) {
+        .header {
+          flex-direction: column;
+        }
+        .section_two {
+          display: none;
+        }
+        .topbar {
+          display: none;
+        }
+      }
+      .geadiant_text {
+        width: 100%;
+        border: 2px solid;
+        padding: 4px 15px;
+        height: 30px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: 700;
+        color: white;
+        background-image: linear-gradient(to right, #d400ff, #ddb5e7);
+      }
+      .form_card {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #585656;
+        border-radius: 15px;
+      }
+      .form_second_section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .input_container {
+        display: flex;
+        border: 2px solid #585656;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .number_input {
+        width: 30px;
+        border: none;
+      }
+      .bold {
+        font-weight: 900;
+      }
+      .pen_text {
+        text-decoration: none;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 5px;
+        color: rgb(22, 187, 118);
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+      }
+      .submit_button {
+        background-color: rgb(22, 187, 118);
+        color: #fff;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .cencel_button {
+        background-color: transparent;
+        color: rgb(22, 187, 118);
+        height: 40px;
+        border: 2px solid rgb(22, 187, 118);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .form_subtotal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .subtotal_number {
+        font-size: 125%;
+      }
+      .rating_number_div {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer_a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+        color: #585656;
+      }
+      .profile_name {
+        color: #d400ff;
+      }
+      .profile {
+        border-bottom: 2px solid #c5c4c4;
+      }
+      .review_number {
+        font-size: 300%;
+      }
+      .review_sm {
+        font-size: 25px;
+        font-weight: 400;
+      }
+      .footer_two {
+        flex: 1;
+      }
+      .footer_one,
+      .footer_tree {
+        flex: 1;
+        min-width: 270px;
+      }
+      .details_heading {
+        color: rgb(22, 187, 118);
+        border-bottom: 2px solid rgb(22, 187, 118);
+        width: fit-content;
+        cursor: pointer;
+      }
+      .faq {
+        min-height: 350px;
+      }
+      .footer_tree {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        gap: 30px;
+      }
+      .footer_text {
+        text-align: center;
+      }
+      <style>
+ 
+  amp-accordion section {
+    border-bottom: 1px solid #ddd; 
+    margin-bottom: 10px; 
+  }
+
+  /* Style the headings */
+  amp-accordion h4 {
+    font-size: 18px; 
+    color: #333; 
+    background-color: #f0f0f0; 
+    padding: 5px; 
+    margin: 0; 
+    cursor: pointer; 
+  }
+
+ 
+  amp-accordion section[expanded] {
+    background-color: #e0e0e0; 
+  }
+
+
+  amp-accordion p {
+    font-size: 16px;
+    color: #666; 
+    margin: 0; 
+    padding: 5px; 
+  }
+</style>
+    </style>
+
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <!-- Topbar -->
+      <section class="topbar">
+        <div>
+          <div class="social_buttons">
+            <a class="social_link" href="#">Livechat</a>
+            <a class="social_link" href="#">Whatsapp</a>
+          </div>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee-content gray_text">
+            Download Aplikasi Pkv Games
+          </div>
+        </div>
+      </section>
+      <!-- Header -->
+      <section class="header">
+        <!-- Logo -->
+        <div class="logo">
+          <amp-img
+            src="./assets/logo.png"
+            width="100px"
+            height="50px"
+            alt="logo"
+          ></amp-img>
+        </div>
+        <!-- Section Two -->
+        <div class="section_two">
+          <!-- Searchbar Container -->
+          <div class="searchbar_container">
+            <span class="Kategori">Kategori</span>
+            <div class="searchbar">
+              <amp-img
+                src="./amp_test-master/assets/search (1).png"
+                width="20"
+                height="20"
+                alt="search"
+              ></amp-img>
+              <input
+                class="searchbar_input"
+                type="text"
+                placeholder="Cari di Ashikqq"
+              />
+            </div>
+          </div>
+          <p class="devices_text">Android IPhone Komputer / PC Ipad / Tab</p>
+        </div>
+        <!-- Chart -->
+        <div class="chart">
+          <div class="upper_cart">
+            <amp-img
+              src="./amp_test-master/assets/shopping-cart.png"
+              width="25"
+              height="25"
+              alt="cart"
+            ></amp-img>
+            <div class="divider"></div>
+            <button class="header_btn_1">Masuk</button>
+            <button class="header_btn_2">Daftar</button>
+          </div>
+          <div class="location">
+            <amp-img
+              src="./amp_test-master/assets/map-pin.png"
+              width="10"
+              height="10"
+              alt="map"
+            ></amp-img>
+            <p>dikim ki</p>
+            <p class="bold_text">Jakarta Pustak</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Main content -->
+    <div class="container">
+      <div class="breadcrumps">
+        <a href="" class="bc_text">Home</a>➧
+        <a href="" class="bc_text">Mainan & Hobi</a>➧
+        <a href="" class="bc_text">Permainan Kartu</a>➧
+        <a href="" class="bc_text">pkv games</a>➧
+        <a href="" class="bc_text">...</a>
+      </div>
+      <div class="main_content">
+        <div class="left_sidebar">
+          <div class="geadiant_text">Serbu OS</div>
+          <div class="form_card">
+            <h3 class="form_heading">Atur jumlah dan catatan</h3>
+            <form method="post" action-xhr="#" target="_top">
+              <div class="form_second_section">
+                <div class="input_container">
+                  <button class="minus_button"><i class="fas fa-minus"></i></button>
+                  <input
+                    class="number_input"
+                    type="number"
+                    name="quantity"
+                    value="1"
+                    required
+                  />
+                  <button class="plus_button"><i class="fas fa-plus"></i></button>
+                </div>
+                <p>Stok Total: <span class="bold">5335</span></p>
+              </div>
+              <a class="pen_text" href="#"
+                ><amp-img
+                  src="./amp_test-master/assets/pen.svg"
+                  width="16"
+                  height="16"
+                  alt="pen"
+                >
+                </amp-img>
+                Tambah Catatan</a
+              >
+              <div class="form_subtotal">
+                <p>Subtotal</p>
+                <p class="bold subtotal_number">15.000</p>
+              </div>
+              <div class="buttons">
+                <input
+                  class="submit_button bold"
+                  type="submit"
+                  value="+ Keranjang"
+                />
+                <button class="cencel_button bold">Beli</button>
+              </div>
+            </form>
+            <div class="form_footer">
+              <a class="footer_a" href="#">
+                <amp-img
+                  src="./amp_test-master/assets/message-square.svg"
+                  width="16"
+                  height="16"
+                  alt="chat"
+                >
+                </amp-img>
+                chat
+              </a>
+              <div class="divider"></div>
+              <a class="footer_a" href="#">
+                <amp-img
+                  src="./amp_test-master/assets/heart.svg"
+                  width="16"
+                  height="16"
+                  alt="wishlist"
+                >
+                </amp-img>
+                Wishlist
+              </a>
+              <div class="divider"></div>
+              <div class="">
+                <amp-img
+                  src="./amp_test-master/assets/share-2.svg"
+                  width="16"
+                  height="16"
+                  alt="share"
+                >
+                </amp-img>
+                <amp-social-share
+                  width="16"
+                  height="16"
+                  type="email"
+                  aria-label="Share by email"
+                ></amp-social-share>
+                <amp-social-share
+                  width="16"
+                  height="16"
+                  type="facebook"
+                  aria-label="Share on Facebook"
+                  data-param-app_id="254325784911610"
+                ></amp-social-share>
+                <amp-social-share
+                  width="16"
+                  height="16"
+                  type="linkedin"
+                  aria-label="Share on LinkedIn"
+                ></amp-social-share>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="middle_content">
+          <div class="middle_heading">
+            <h2 class="main_heading">
+              Pkv Games - Situs judi Bandarqq & Dominoqq Online Terpercaya
+            </h2>
+            <p class="main_subheading">
+              Terjual 10 rb+ • bintang <i class="fas fa-star star-icon"></i>4.9
+              (4.775 rating) • Diskusi (288)
+            </p>
+            <h1 class="price">Rp15.000</h1>
+          </div>
+          <div class="details">
+            <h3 class="details_heading">Detail</h3>
+            <p><strong>Kondisi:</strong> Baru</p>
+            <p><strong>Min. Pemesanan:</strong> 1 Buah</p>
+            <p><strong>Etalase:</strong> Pkv games</p>
+            <p>
+              Pkv games telah menjadi populer karena permainan bandarqq online
+              saat ini, pkv games dirancang untuk menjalankan permainan bandarqq
+              online yang ramah bermain bersama secara online. pkv games menjadi
+              aplikasi populer bagi banyak pemain bandarqq online karena mudah
+              untuk di unduh.
+            </p>
+            <p>
+              Semua orang menyukai permainan bandarqq online, banyak yang telah
+              berpendapat bahwa pkv games adalah aplikasi permainan bandarqq
+              online terbaik untuk dimainkan secara online, sangking terkenal
+              bandarq pkv games membuat lalu lintas pemain yang tinggi. dengan
+              banyaknya lalu lintas maka semakin banyak tabel pkv qq yang dapat
+              dipilih. perangkat lunak yang dirancang oleh pengembang terkemuka
+              seperti pkv games, memberi anda pengalaman bermain bandarqq online
+              yang luar biasa.
+            </p>
+
+            <div class="games_card">
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+              <div class="card">
+                <amp-img
+                  src="https://meganprokott.com/assets/img/game/adu-sakong.webp"
+                  width="90"
+                  height="90"
+                  alt="pic"
+                  layout="responsive"
+                >
+                </amp-img>
+                <div>Pkv games Adu Sakong</div>
+              </div>
+            </div>
+            <p>
+              Bemain bandarqq online dengan pkv games adalah cara yang
+              menyenangkan untuk mendapatkan penghasilan besar, situs pkv games
+              terpercaya menawarkan permainan bandarqq online yang aman dan
+              menyenangkan kepada para pemainnya dan situs pkv telah menjadi
+              situs pkv games terpercaya sejak beberapa tahun ini.<br />
+              Bandarqq online di akui sebagai permainan tersukses milik Pkv
+              Games, permainan bandarq yang mendebarkan hanya membutuhkan
+              ketrampilan dan fokus. kesempatan menjadi bandar di permainan
+              bandarqq online memberikan anda peluang untuk mencari kemenangan.
+              sejak ada internet, permainan bandarq menjadi tersedia tanpa
+              batasan di manapun anda berada, jadi anda mudah untuk mencarinya.
+              Situs PKV Dominoqq terpercaya PKV Games Dengan kemajuan teknologi
+              saat ini,
+              <br />pemain pkvqq memiliki akses yang lebih baik ke permainan
+              dominoqq online, baik melalui desktop atau perangkat seluler.
+              pilihan permainan pkv qq kami berikutnya adalah dominoqq online
+              milik milik pkv games. Bemain dominoqq online sangat menyenangkan,
+              mempertimbangkan keamanan dan berapa lama situs berada di industri
+              ini, maka semakin aman untuk dimainkan. bergabunglah dengan situs
+              dominoqq terpercaya milik pkv games hanya dengan minimal deposit
+              saja bisa membuat anda menjadi pemenang. Metode pembayaran
+              dominoqq online Pkv Games Kepada Pemain Pkv qq? Situs pkv games
+              terpercaya menawarkan kepada para pemain pkv qq dengan metode
+              perbankan terbaik untuk setoran dan penarikan, pkv games memaksa
+              semua situs pkv untuk mematuhi protokol keamanan berkualitas
+              memastikan semua data pribadi terjaga dengan aman dan opsi
+              pembayaran yang baik Di wajibkan Tersedia semua bank lokal (BCA,
+              BNI, BRI, DANAMON, MANDIRI) Ewallet (OVO, DANA, LINK AJA, GOPAY)
+              Deposit pulsa (TELKOMSEL, XL) menentukan minimal depost dan
+              penarikan.<br />
+              Perlu di ingat sebelum melakukan deposit selalu periksa apakah
+              informasi no dan nama rekening sudah sesuai dengan rekening situs
+              pkv, karena hal itu bisa menjauhkan diri dari kasus penipuan yang
+              marak terjadi sekarang. Bagaimana Lalu Lintas Pemain Dominoqq
+              Mempengaruhi Pkv games? Bermain di situs dominoqq online
+              terpercaya anda membutuhkan sesorang untuk bermain sebagai lawan
+              anda, volume besar lalu lintas permainan dominoqq online pkv games
+              menentukan seberapa cepat anda menemukan lawan anda di meja
+              permainan pkv games dominoqq online. Sudah tidak menjadi rahasia
+              umum di kalangan pemain pkv qq bahwa pkv games memiliki jutaan
+              member aktif pemain di permainan dominoqq. Keuntungan Mencoba
+              Permainan Bandarqq Online Pkv Games Pkv games mudah menang dan
+              anda dapat menemukan permainan bandarq dan meja di setiap ruang
+              bandarqq online milik aplikasi pkv games, hal utama adalah
+              mempelajari aturan permainan dengan cermat untuk mengembangkan
+              strategi. aplikasi pkv games dengan lalu lintas tinggi memiliki
+              lebih banyak pro daripada kontra. Aplikasi bandarq terpercaya pkv
+              games adalah merek judi paling berpengaruh saat ini berkat
+              permainan bandarqq online yang di gemari oleh semua kalangan
+              pemain pkv qq, gunakan daftar situs pkv games terpercaya dan situs
+              bandarq tepercaya untuk bermain pkv qq, dominoqq, bandarq. Bermain
+              bandarq secara online tentu nya membutuhkan sejumlah biaya dan di
+              dukung internet yang baik, apabila anda pemula di permainan
+              bandarq pastikan anda bermain bandarqq online di mulai dengan
+              taruhan rendah, bandarqq online jauh lebih mudah belajar. anda
+              harus selalu memulai dengan permainan taruhan rendah, agar belajar
+              bermain bandarqq online menjadi tidak terlalu mahal.
+              <br />bandarqq di pkvgames di rancang untuk bersenang senang,
+              apabila anda belum pernah mendengarnya maka anda wajib mencoba
+              permainan situs bandarq di pkv games dan bersiaplah menjadi
+              pemenang! Unduh Aplikasi Bandarqq dan Dominoqq online Pkv Games
+              Terbaru Sebagian besar situs bandarqq dan dominoqq online
+              menggunakan perangkat lunak yang harus diunduh terlebih dahulu ke
+              ponsel atau tablet anda. aplikasi pkv games terbaru menggunakan
+              teknologi canggih dan untuk mengunduh aplikasi bandarqq dan
+              dominoqq milik pkv games, mulailah dengan mengklik tombol link
+              download bandarqq dan dominoqq pkv games di situs pkv anda
+              bermain, ini akan membawa anda ke halaman yang merinci
+              langkah-langkah yang diperlukan untuk mengunduh dan menginstal
+              perangkat lunak bandarqq dan dominoqq situs pkv qq yang anda
+              gabung, serta langkah-langkah yang diperlukan untuk mendaftarkan
+              akun di situs bandarq dan dominoqq terpercaya. Aplikasi bandarqq
+              dan dominoqq online akan memberi anda kesempatan untuk bermain di
+              perangkat seluler saat bepergian. anda biasanya memiliki pilihan
+              antara bermain di situs web versi html5 atau bermain di aplikasi
+              yang dapat diunduh. ini tergantung pada versi perangkat ponsel
+              yang anda gunakan untuk bermain bandarqq dan dominoqq pkv games.
+              Keuntungan bermain bandarqq dan dominoqq pkv games di perangkat
+              seluler adalah anda dapat bermain banyak permainan dengan 1 akun
+              terdaftar! Setelah anda mengunduh perangkat lunak pkv games dan
+              menginstalnya, anda akan melihat halaman utama aplikasi untuk
+              mengisi username dan password yang cukup mudah dinavigasi. versi
+              terbaru dari perangkat lunak pkv games memang menawarkan fitur
+              yang kuat untuk menemukan permainan pkv qq serta kemampuan untuk
+              pengisian form deposit dan penarikan langsung di aplikasi pkv
+              games, di mana hal tersebut di aplikasi pkv games versi lalu
+              kemampuan ini belum bisa. Bergabung di Asikqq Situs Bandarqq dan
+              Dominoqq Terpercaya Untuk bermain bandarq dan dominoqq tentunya
+              anda harus memiliki akun bermain, sebagai saran penutup artikel
+              kali ini, kami merekomendasikan situs AsikQQ untuk bermain Bandarq
+              dan dominoqq online.<br />
+              situs yang berdiri sejak 2015 bersama aplikasi pkv games ini
+              memiliki reputasi yang cukup baik di kalangan pemain setia pkv qq.
+              lalu lintas pemain dengan jumlah yang besar menjadi alasan utama
+              kami menyebut situs AsikQQ layak untuk di coba! Link resmi AsikQQ
+              bisa anda tanyakan di Whatsapp +8559325706 semua pertanyaan anda
+              akan di jawab dengan cepat dan tepat 24/7 AsikQQ memberikan
+              promosi cashback 0.3% dan bonus referral sebesar 20% setelah anda
+              mendaftar dan menyetor ke akun AsikQQ dan mulai bermain bandarqq
+              dan dominoqq online maka anda sudah otomatis akan mengikuti
+              promosi cashback dan semua pemain baru yang mendaftar dengan kode
+              bonus referral memenuhi syarat untuk bonus referral menjadi
+              pemenang!
+            </p>
+            <h5 class="learn_more">Lihat Selengkapnya</h5>
+            <div class="profile">
+              <div class="main_profie">
+                <div class="main_profie_2">
+                  <amp-img
+                    src="https://meganprokott.com/assets/img/licence-1.png"
+                    width="90"
+                    height="90"
+                    alt="profile_pic"
+                  >
+                  </amp-img>
+                  <div class="profiel_info">
+                    <h3 class="profile_name">
+                      <i class="fas fa-check-circle"></i> AshikQQ
+                    </h3>
+                    <p class="gray_text">
+                      Online 24 <span class="bold">Jam Setiap hari</span>
+                    </p>
+                  </div>
+                </div>
+                <button class="header_btn_1">Follow</button>
+              </div>
+              <div class="secondary_profile">
+                <p><i class="far fa-star"></i> 4.9rata-rata ulasan</p>
+                <p><i class="far fa-clock"></i> ± 3 menitpesanan diproses</p>
+              </div>
+            </div>
+            <div class="other_details">
+              <h3>Pengiriman</h3>
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Dikirim dari
+                <span class="bold">Kota Depok</span>
+              </p>
+              <p><i class="fas fa-truck"></i> Ongkir kurir kargo Rp25 rb</p>
+              <p class="gray_text">
+                <i class="far fa-map-marker-alt"></i> Estimasi tiba 3 menit
+              </p>
+              <div class="flex">
+                <p class="flex">
+                  <i class="far fa-map-marker-alt"></i> Kurir lainnya:<button
+                    class="gray_text cod_btn"
+                  >
+                    COD
+                  </button>
+                </p>
+                <h5 class="green_text">Lihat Pilihan Kurir</h5>
+              </div>
+            </div>
+            <div class="other_details">
+              <h3>Beli di aplikasi, makin banyak promo!</h3>
+              <p>
+                <i class="fas fa-mobile-alt"></i>
+                Scan QR-nya untuk lihat barang ini di aplikasi Asikqq. Bebas
+                ongkir, lho~
+              </p>
+              <button class="gray_text">
+                <i class="fas fa-qrcode"></i> Scan QR
+              </button>
+
+              <div class="flex">
+                <p class="gray_text" style="font-size: small">
+                  Ada masalah dengan produk ini?
+                </p>
+                <h5 class="gray_text" style="font-size: small">
+                  <i class="fas fa-exclamation-triangle"></i> Laporkan
+                </h5>
+              </div>
+            </div>
+            <div class="faq">
+              <h3>FAQ</h3>
+              <amp-accordion animate class="sample" expand-single-section>
+                <section expanded>
+                  <h4>Question 1</h4>
+                  <p>Answer to question 1.</p>
+                </section>
+                <section>
+                  <h4>Question 2</h4>
+                  <p>Answer to question 2.</p>
+                </section>
+                <section>
+                  <h4>Question 3</h4>
+                  <p>Answer to question 3.</p>
+                </section>
+                <section>
+                  <h4>Question 4</h4>
+                  <p>Answer to question 4.</p>
+                </section>
+                <section>
+                  <h4>Question 5</h4>
+                  <p>Answer to question 5.</p>
+                </section>
+                <section>
+                  <h4>Question 6</h4>
+                  <p>Answer to question 6.</p>
+                </section>
+                <section>
+                  <h4>Question 7</h4>
+                  <p>Answer to question 7.</p>
+                </section>
+              </amp-accordion>
+            </div>
+          </div>
+        </div>
+        <div class="right_sidebar">
+          <div class="image_slider">
+            <amp-carousel
+              type="slides"
+              width="450"
+              height="300"
+              layout="responsive"
+              controls
+              loop
+              autoplay
+              delay="3000"
+              data-next-button-aria-label="Go to next slide"
+              data-previous-button-aria-label="Go to previous slide"
+              role="region"
+              aria-label="Looping carousel"
+            >
+              <amp-img
+                src="https://meganprokott.com/assets/img/product/Slider_3.png"
+                width="400"
+                height="300"
+                layout="responsive"
+              ></amp-img>
+              <amp-img
+                src="https://meganprokott.com/assets/img/product/Slider_1.png"
+                width="400"
+                height="300"
+                layout="responsive"
+              ></amp-img>
+              <amp-img
+                src="https://meganprokott.com/assets/img/product/Slider_2.png"
+                width="400"
+                height="300"
+                layout="responsive"
+              ></amp-img>
+              <amp-img
+                src="https://meganprokott.com/assets/img/product/Slider_4.png"
+                width="400"
+                height="300"
+                layout="responsive"
+              ></amp-img>
+            </amp-carousel>
+          </div>
+          <div class="review_section">
+            <h3>ULASAN PEMBELI</h3>
+            <div class="rating_number_div">
+              <amp-img
+                src="https://www.pngall.com/wp-content/uploads/4/Symbol-Star-PNG.png"
+                width="25"
+                height="25"
+                alt="star"
+              >
+              </amp-img>
+              <div class="review_number bold">
+                4.9<span class="review_sm">/5</span>
+              </div>
+            </div>
+            <div class="progress_bar">
+              <div class="progress-container">
+                <i class="fas fa-star star-icon"></i>
+                <span class="rating">5</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 90.825%">
+                    <div class="progress"></div>
+                  </div>
+                  <span class="percentage">90.825</span>
+                </div>
+              </div>
+              <div class="progress-container">
+                <i class="fas fa-star star-icon"></i>
+                <span class="rating">4</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar">
+                    <div class="progress"></div>
+                  </div>
+                  <span class="percentage">5.228</span>
+                </div>
+              </div>
+              <div class="progress-container">
+                <i class="fas fa-star star-icon"></i>
+                <span class="rating">3</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar">
+                    <div class="progress"></div>
+                  </div>
+                  <span class="percentage">0</span>
+                </div>
+              </div>
+              <div class="progress-container">
+                <i class="fas fa-star star-icon"></i>
+                <span class="rating">2</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar">
+                    <div class="progress"></div>
+                  </div>
+                  <span class="percentage">0</span>
+                </div>
+              </div>
+              <div class="progress-container">
+                <i class="fas fa-star star-icon"></i>
+                <span class="rating">1</span>
+                <div class="progress-bar-container">
+                  <div class="progress-bar">
+                    <div class="progress"></div>
+                  </div>
+                  <span class="percentage">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer_one">
+          <h3 class="gray_text">16 Permainan Pkv Games resmi</h3>
+          <p class="gray_text">Bandarqq Online</p>
+          <p class="gray_text">Dominoqq Online</p>
+          <p class="gray_text">Poker Online</p>
+          <p class="gray_text">Sakong</p>
+          <p class="gray_text">Capsa Susun</p>
+          <p class="gray_text">Adu QQ</p>
+          <p class="gray_text">Adu Sakong</p>
+          <p class="gray_text">Perang Dadu</p>
+          <p class="gray_text">Perang Baccarat</p>
+          <p class="gray_text">Bandar66</p>
+          <p class="gray_text">Bandar Poker</p>
+          <p class="gray_text">BD QQ</p>
+          <p class="gray_text">AFB Slot</p>
+          <p class="gray_text">AFB Live Casino</p>
+          <p class="gray_text">Gaple</p>
+          <p class="gray_text">BD Koprok</p>
+        </div>
+        <div class="footer_two">
+          <div class="divition">
+            <h3 class="gray_text">Contact us</h3>
+            <p class="gray_text" style="font-size: small">Live Chat</p>
+            <p class="gray_text" style="font-size: small">Whatsapp</p>
+          </div>
+          <div class="divition">
+            <h3 class="gray_text">Keamanan & Privasi</h3>
+            <amp-img
+              src="./amp_test-master/assets/tac.png"
+              width="400"
+              height="50"
+              layout="responsive"
+              alt="tac"
+            >
+            </amp-img>
+          </div>
+          <div class="divition">
+            <h3 class="gray_text">Ikuti Kami</h3>
+            <amp-social-share
+              class="rounded"
+              aria-label="Share by email "
+              type="email"
+              width="25"
+              height="25"
+            ></amp-social-share>
+            <amp-social-share
+              class="rounded"
+              aria-label="Share on Facebook"
+              type="facebook"
+              data-param-app_id="254325784911610"
+              width="25"
+              height="25"
+            ></amp-social-share>
+            <amp-social-share
+              class="rounded"
+              aria-label="Share on LinkedIn"
+              type="linkedin"
+              width="25"
+              height="25"
+            ></amp-social-share>
+            <amp-social-share
+              class="rounded"
+              aria-label="Share on Pinterest"
+              type="pinterest"
+              data-param-media="https://amp.dev/static/samples/img/amp.jpg"
+              width="25"
+              height="25"
+            ></amp-social-share>
+          </div>
+        </div>
+        <div class="footer_tree">
+          <amp-img src="./amp_test-master/assets/logo.png" width="150" height="70" alt="logo">
+          </amp-img>
+          <a href="#"
+            ><amp-img
+              src="./amp_test-master/assets/download.png"
+              width="200"
+              height="40"
+              alt="download"
+            >
+            </amp-img
+          ></a>
+          <p class="gray_text footer_text">
+            © meganprokott.com 2023.<br />
+            All Rights Reserved. Pkv Games - Situs<br />
+            judi Bandarqq & Dominoqq Online Terpercaya
+          </p>
+        </div>
+      </footer>
+    </div>
+    <section class="mobile_navbar">
+      <div class="mobile_navbar_ul">
+        <amp-img src="https://www.freeiconspng.com/uploads/icones-png-theme-home-19.png"
+        class="mobile_navbar_icon"
+          width="50px"
+          height="50px"
+          layout="responsive"
+          alt="">
+        </amp-img>
+        <a class="mobile_navbar_text" href="#">BERABDA</a>
+      </div>  
+      <div class="manu_divider"></div>
+      <div class="mobile_navbar_ul">
+        <amp-img src="https://th.bing.com/th/id/R.78518ca84c7df2ac2b6e99225d7374cf?rik=UUAkwc4TIWmrxg&pid=ImgRaw&r=0"
+        class="mobile_navbar_icon"
+          width="50px"
+          height="50px"
+          layout="responsive"
+          alt="">
+        </amp-img>
+        <a class="mobile_navbar_text" href="#">PROMOSI</a>
+      </div> 
+      <div class="mobile_navbar_ul">
+        <amp-img src="https://th.bing.com/th/id/R.8fe16a822ea8f1b5a374c20670163243?rik=GQHfANM%2b0f9Yxw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2ftrophy-png-trophy-icon-1600.png&ehk=EkqWEgr7Y5Qkk6%2fDfFvoWOdEYhA01B%2fYLncccGc2PEw%3d&risl=&pid=ImgRaw&r=0"
+        class="mobile_navbar_icon"
+          width="50px"
+          height="50px"
+          layout="responsive"
+          alt="">
+        </amp-img>
+        <a class="mobile_navbar_text" href="#">EVENT</a>
+      </div> 
+      <div class="mobile_navbar_ul">
+        <amp-img src="https://pngimg.com/uploads/whatsapp/whatsapp_PNG1.png"
+        class="mobile_navbar_icon"
+          width="50px"
+          height="50px"
+          layout="responsive"
+          alt="">
+        </amp-img>
+        <a class="mobile_navbar_text" href="#">WHATSAPP</a>
+      </div> 
+      <div class="mobile_navbar_ul">
+        <amp-img src="https://th.bing.com/th/id/R.33f3e84c499e95b21bc379cb7161e34a?rik=NtT1Na7qgblh%2fw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flive-chat-icon-image-7403-935.png&ehk=ZRsslmURKIC7syWo%2byAH9qQUmgFgQmxlxLLvyNnPaFE%3d&risl=&pid=ImgRaw&r=0"
+        class="mobile_navbar_icon"
+          width="50px"
+          height="50px"
+          layout="responsive"
+          alt="">
+        </amp-img>
+        <a class="mobile_navbar_text" href="#">LIVECHAT</a>
+      </div>
+      <div class="red_bg">
+        <div class="divider divider_1"></div>
+        <div class="divider divider_2"></div>
+        <div class="divider divider_3"></div>
+        <div class="divider divider_4"></div>
+      </div>
+    </section>
+  </body>
+</html>
