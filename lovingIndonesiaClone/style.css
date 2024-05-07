@@ -1,0 +1,340 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navigation_bar {
+    background-color: #1f1f1f;  
+    align-items: center;
+    
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+.left_nav {
+    display: flex;
+    gap: 20px;
+    color: antiquewhite;
+    align-items: center;
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_info, .right_nav {
+    gap: 10px;
+}
+
+.social_icon {
+    color: antiquewhite;
+}
+
+
+
+.border {
+    border: 2px solid;
+}
+
+.header_background {
+    min-height: 600px;
+    background-image: url("https://lovingindonesia.id/wp-content/uploads/2020/08/web-agency-bg1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 50% 50%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center
+}
+.heading_top {
+    font-size: 120px;
+    color: aliceblue;
+    font-weight: 900;
+    text-align: center;
+}
+.heading_subheading {
+    font-size: 25px;
+    color: aliceblue;
+}
+.heading_button {
+    background-color: rgb(255, 4, 234);
+    padding: 15px 30px;
+    color: aliceblue;
+    font-size: 20px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-weight: 800;
+    transition: all 1s ease;
+}
+.bottom_img {
+    margin-top: -80px;
+}
+.features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+    margin: 50px 0;
+}
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.feature_icon {
+    font-size: 50px;
+}
+.feature_text{
+    font-size: 30px;
+    font-weight: 700;
+}
+.img_card{
+    
+    z-index: 30;
+}
+.card_section,.second_card_section {
+    display: flex;
+    align-items: start;
+}
+.text_card {
+    background-color: blue;
+    width: 100%;
+    padding: 105px;
+    border-radius: 15px;
+    color: aliceblue;
+    margin-left: -90px;
+}
+.card_heading {
+    font-size: 50px;
+}
+.card_details {
+    font-size: 20px;
+}
+.card_img {
+    border-radius: 20px;
+    margin-top: -15px;
+
+} 
+.second_text_card {
+    background-color: #7f04fb;
+    color: aliceblue;
+    padding: 50px;
+    border-radius: 15px;
+    flex: 1;
+}
+.second_img_card {
+    flex: 1;
+}
+.google_ad_img {
+    height: 250px;
+    width: 100%;
+    border-radius: 15px;
+    margin-left: -50px;
+    margin-top: -30px;
+   box-shadow: 0 2px 40px black;
+   z-index: 10;
+}
+.second_card_section {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.footer_topbar {
+    margin-top: -5vw;
+    background-image: url('./assets/footer_top_bg.png');
+    min-height: 800px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0% 0%, 50% 20%, 100% 0%, 100% 100%, 0% 100%);
+}
+.footer_container {
+    margin-top: 200px;
+}
+.heading_top_footer {
+    font-size: 6vw;
+    color:aliceblue;
+    text-align: center;
+}
+.footer_card__container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.heading_button:hover {
+ background-color:blue;
+ b
+}
+.footer_card {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    flex: 1;
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 30px;
+    color: #7f04fb;
+    min-width: 200px;
+}
+.footer_top_icon {
+    font-size: 60px;
+}
+.top_footer_header{
+    color: #1f1f1f;
+}
+
+.round_div {
+    min-height: 250px;
+    background-color: rgb(255, 0, 251);
+    border-radius: 50% 50% 0 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+    color: aliceblue;
+    gap: 30px;
+}
+.top_footer_header_text {
+   font-size: 20px;
+   font-weight: 500;
+   text-align: center;
+}
+.italic {
+    text-align: center;
+}
+.main_footer {
+    background-color: #1f1f1f;
+    min-height: 300px;
+    color:aliceblue;
+}
+.footer_thin {
+    color: rgb(168, 168, 169);
+}
+.footer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.footer_one,.footer_two {
+    flex: 1;
+}
+.footer_info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.google_partner_img {
+    width: 200px;
+}
+.addressbar {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.footer_bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+@media only screen and (max-width: 1000px) {
+    .round_div {
+        border-radius: 0;
+        margin-top: 0;
+
+    }
+    .card_section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
+    .card_img {
+        margin: 10px 0;
+        width: 90vw;
+        height: 250px;
+    }
+    .text_card {
+        margin: 15px;
+padding: 10px;
+overflow: hidden;
+    }
+    .second_card_section {
+        flex-direction: column-reverse;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .google_ad_img {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    .second_card_section {
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 700px){
+    .footer_topbar{
+        clip-path: none;
+    }
+    .footer_container {
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .nav_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .nav_info {
+        display: none;
+    }
+    .right_nav {
+        gap: 24px;
+    }
+    .heading_top {
+        font-size: 10vw;
+    }
+    .heading_subheading {
+        font-size: 5vw;
+    }
+    .header_background {
+        min-height: 85vw;
+    }
+    .heading_button {
+        font-size: 4vw;
+        padding: 5px 10px;
+    }
+    .features {
+        justify-content: center;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    .bottom_img {
+        display: none;
+    }
+}
