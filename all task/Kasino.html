@@ -1,0 +1,296 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>kasino</title>
+    <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-custom>
+@font-face {
+  font-family: 'primaryFont';
+  src: url('./KasinoClone/assets/Baumans-Regular.ttf') format('truetype'),
+}
+       .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            
+        }
+        body {
+            background-color: #020C25; 
+            font-family: Roboto, sans-serif;
+        }
+        .navbar_container {
+            background-color:#1c222e;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .navbar_flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .left_nav {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .nav_link {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .nav_link:hover {
+            color: #b4903a;
+        }
+        .nav_links {
+            display: flex;
+            gap: 15px;
+        }
+        .gold_button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+            transition: all .5s;
+        }
+        .gold_button:hover {
+            box-shadow: 0 0 15px #b4903a;
+        }
+        .right_nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav_language_selector {
+            background-color: transparent;
+            color: #f1f1f1;
+            border: none;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none;
+        }
+        .nav_language_option {
+            background-color: #212529;
+        }
+        .hero_section {
+            background-image: url('./KasinoClone/assets/heroimage.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 720px;
+            padding: auto ;
+        }
+        .hero__heading_top {
+            font-size: 1.5rem;
+            font-family: Roboto, sans-serif;
+            font-weight: 500;
+            color: #b4903a;
+            margin-top: 90px;
+        }
+        .hero__heading {
+            font-family: 'primaryFont';
+            font-size: 5.875rem;
+            font-weight: 700;
+            background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+        .heading_button {
+            font-size: 20px;
+            margin-top: 50px;
+        }
+        .uses_steps_section {
+          
+            background-color: #041A34;
+        }
+        .uses_steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .user__step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 0 0auto;
+            width: 33%;
+            
+            
+        }
+        .user__step-number {
+            font-family: 'primaryFont';
+            font-size: 6rem;
+            font-weight: 400;
+            background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+        .user__step_text__heading {
+            font-family: 'primaryFont';
+            font-size: 2rem;
+            font-weight: 400;
+            background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+        .user__step_text__paragraph {
+            color: #f1f1f1;
+        }
+        .divider {
+            border-right: 2px solid #b4903a;
+          
+        }
+        .normal__heading {
+            font-family: 'primaryFont';
+            font-size: 2.5rem;
+            font-weight: 400;
+            background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+        .card__name {
+            font-family: 'primaryFont';
+            font-size: 2rem;
+            font-weight: 400;
+            background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+        .game__cards {
+            display: flex;
+            justify-content: space-between;
+            gap:30px;
+        }
+        .game__card {
+            flex: 1;
+            background-image: url('./KasinoClone/assets/card-bg.png');
+            background-position: center;
+            border-radius: 5px;
+            background-size: cover;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            background-repeat: no-repeat;
+            border: 2px solid transparent;
+            transition: all 1s;
+        }
+        .game__card:hover {
+            border: 2px solid #ffae01;
+            box-shadow: 0 0 15px #b4903a;
+
+        }
+      </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <div class="navbar_container">
+        <div class="container navbar_flex">
+            <div class="left_nav">
+                <amp-img src="./KasinoClone/assets/logo.png"
+                  width="150"
+                  height="35"
+                  alt="logo">
+                </amp-img> 
+                <div class="nav_links">
+                    <a class="nav_link" href="#">HOME</a>
+                <a class="nav_link" href="#">GAMES</a>
+                <a class="nav_link" href="#">FAQ</a>
+                <a class="nav_link" href="#">CONTACT</a>
+                </div>
+            </div>
+            <div class="right_nav">
+                <button class="gold_button">Login</button>
+                <button class="gold_button">Registration</button>
+                <select class="nav_language_selector">
+                    <option class="nav_language_option">English</option>
+                    <option class="nav_language_option">Hindi</option>
+                    <option class="nav_language_option">Bangla</option>
+                  </select>
+            </div>
+        </div>
+    </div>
+    <div class="hero_section">
+        <div class="container">
+            
+<p class="hero__heading_top">Online Casino</p>
+<h1 class="hero__heading">Play Earn </br> and Enjoy</h1>
+<button class="gold_button heading_button">Play Now</button>
+            </div>
+        
+    </div>
+    <div class="uses_steps_section">
+        <div class="container uses_steps">
+            <div class="user__step divider">
+                <h1 class="user__step-number">1</h1>
+                <div class="user__step_text">
+                    <h3 class="user__step_text__heading">Register Today</h3>
+                    <p class="user__step_text__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor tarae.</p>
+                </div>
+            </div>
+            <div class="user__step divider">
+                <h1 class="user__step-number">2</h1>
+                <div class="user__step_text">
+                    <h3 class="user__step_text__heading">Get Ready</h3>
+                    <p class="user__step_text__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor tarae.</p>
+                </div>
+            </div>
+            <div class="user__step">
+                <h1 class="user__step-number">3</h1>
+                <div class="user__step_text">
+                    <h3 class="user__step_text__heading">Enjoy Bonus</h3>
+                    <p class="user__step_text__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor tarae.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="game__card_section container">
+        <h1 class="normal__heading">Our Top Games</h1>
+        <div class="game__cards">
+            <div class="game__card">
+                <h2 class="card__name">Number Buy</h2>
+                <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
+                  width="250"
+                  height="250"
+                  alt="">
+                </amp-img>
+                <p class="card__limit">Invest Limit: $1.96 - $1000.65</p>
+                <button class="gold_button">Play Now</button>
+            </div>
+            <div class="game__card">
+                <h2 class="card__name">Roulette</h2>
+                <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
+                  width="250"
+                  height="250"
+                  alt="">
+                </amp-img>
+                <p class="card__limit">Invest Limit: $1.96 - $1000.65</p>
+                <button class="gold_button">Play Now</button>
+            </div>
+            <div class="game__card">
+                <h2 class="card__name">Zero To Ninty Nine</h2>
+                <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
+                  width="250"
+                  height="250"
+                  alt="">
+                </amp-img>
+                <p class="card__limit">Invest Limit: $1.96 - $1000.65</p>
+                <button class="gold_button">Play Now</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
