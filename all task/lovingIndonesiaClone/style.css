@@ -79,6 +79,7 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     padding: 20px 30px;
+    overflow-x: hidden;
 }
 .left_nav {
     display: flex;
@@ -186,6 +187,7 @@ p {
 }
 .img_card{
     background-color: #fff;
+    border-radius: 15px;
     z-index: 30;
 }
 .card_section,.second_card_section {
@@ -215,7 +217,7 @@ p {
 .card_img {
     border-radius: 20px;
     margin-top: -15px;
-    width: 90vh;
+    
 
 } 
 .second_text_card {
@@ -234,7 +236,7 @@ p {
     width: 100%;
 }
 .google_ad_img {
-    height: 275px;
+    
     width: 100%;
     border-radius: 15px;
     margin-left: -25px;
@@ -247,13 +249,15 @@ p {
     margin-bottom: 10px;
 }
 .footer {
- width: 90vw;
+ width: 100%;
  overflow: hidden;
 }
 .footer_two {
     border-right: 1px solid rgb(73, 70, 70);
 }
 .footer_one {
+    display: flex;
+    justify-content: space-between;
     border-left: 1px solid rgb(73, 70, 70);
 }
 .elementor-shape-fill {
@@ -345,6 +349,7 @@ p {
 }
 .italic {
     text-align: center;
+    margin-bottom: 25px;
 }
 .main_footer {
     background-color: #343638;
@@ -366,8 +371,11 @@ p {
 
 .footer {
     display: flex;
-    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
     flex-wrap: wrap;
+    overflow-x: hidden;
+    row-gap: 40px;
 }
 .footer_one,.footer_two {
     flex: 1;
@@ -377,6 +385,7 @@ p {
     flex-direction: column;
     gap: 40px;
     font-family: 'SiteDes',sans-serif;
+    width: fit-content;
 }
 .footer_info__text, .footer_details,.footer_thin,.footer_copywrite {
     font-family: 'SiteDes',sans-serif;
@@ -397,7 +406,8 @@ p {
     margin-top: 20px;
 }
 .google_partner_img {
-    width: 300px;
+    height: auto;
+    max-width: 100%;
 }
 .footer_icon {
     font-size: 14px;
@@ -421,8 +431,14 @@ p {
     margin-top: 60px;
     padding: 25px;
 }
-
+@media only screen and (max-width: 1400px){
+    .footer_one,.footer_two {
+        border: none;
+    }
+   
+}
 @media only screen and (max-width: 1000px) {
+    
     .blue_svg {
         margin-top: 0;
     }
@@ -450,13 +466,14 @@ p {
 
     }
     .img_card {
-        border-radius: 60px;
+        width: 100%;
     }
     .card_img {
+        width: 100%;
         margin: 10px 0;
-        width: 95vw;
-        height: 250px;
         border-radius: 20px;
+        background-color: #fff;
+        padding: 5px;
     }
     .text_card {
         margin: -5px;
@@ -466,21 +483,52 @@ border-radius: 0 0 15px 15px;
 text-align: center;
 
     }
-    .second_card_section {
-        flex-direction: column-reverse;
-        gap: 20px;
+    .second_text_card {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+
+    }
+    .card_details {
+     text-align: center;
+    }
+
+    .second_img_card {
+        margin-bottom: -40px;
+        box-shadow: none;
+    }
+    .second_card_section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        padding: 20px;
     }
     .google_ad_img {
        
-        height: 100%;
         margin: 0;
         z-index: 30;
         position:relative;
     }
     .second_card_section {
         margin-top: 10px;
+    }
+    
+}
+@media only screen and (max-width: 700px) {
+    .footer{
+        margin-top: 100px;
+        margin-bottom: 100px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid #7a7777;
+        border-right: 2px solid #787474;
+        width: 70%;
+        
     }
 }
 @media only screen and (max-width: 700px){
@@ -501,6 +549,13 @@ text-align: center;
         margin: 0;
         
     }
+     .footer_one,.footer_two {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    } 
   
 }
 @media only screen and (max-width: 900px) {
@@ -523,6 +578,24 @@ text-align: center;
         }
         
     }
+
+    @media only screen and (max-width: 600px) {
+        .footer_card {
+            align-items: center;
+            justify-content: center;
+        }
+        .top_footer_paragraph,.top_footer_header {
+            text-align: center;
+        }
+        .footer_card__container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .container {
+            padding: 20px 15px;
+        }
+    }
+    
    
    
     /* .heading_button {

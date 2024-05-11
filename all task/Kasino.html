@@ -5,7 +5,11 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>kasino</title>
     <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <style amp-custom>
 @font-face {
   font-family: 'primaryFont';
@@ -16,7 +20,31 @@
             margin: 0 auto;
             padding: 20px 40px;
             
+            
         }
+        .game,.amount {
+            margin: 6px;
+            padding: 0;
+            font-size: 15px;
+        }
+        .footer_section {
+  
+
+  background-image: url(./KasinoClone/assets/main_footer__bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 1px solid #b4903a;
+}
+
+
+.footer_manu__a {
+  color: #f1f1f1;
+
+}
+.footer_manu__a:hover {
+  color: #5b4516;
+}
         body {
             background-color: #020C25; 
             font-family: Roboto, sans-serif;
@@ -29,9 +57,27 @@
             display: flex;
             justify-content: space-between;
         }
+        
         .left_nav {
             display: flex;
             gap: 50px;
+            align-items: center;
+        }
+        .winner_name {
+            font-family: 'primaryFont';
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0;
+    padding: 0;
+
+        }
+        .center_heading {
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
         .nav_link {
@@ -39,6 +85,22 @@
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
+        }
+        .game_name_section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .win_amount_section {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            flex-direction: column;
+            
+        }
+        .investors_heading {
+            font-size: 1.5rem;
         }
         .nav_link:hover {
             color: #b4903a;
@@ -49,14 +111,212 @@
         }
         .gold_button {
             border: none;
-            padding: 10px 20px;
+            padding: 20px 20px;
             border-radius: 5px;
             background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
             transition: all .5s;
         }
-        .gold_button:hover {
-            box-shadow: 0 0 15px #b4903a;
-        }
+        .button_two {
+  background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+  padding: 10px 20px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 0 25px;
+  position: relative;
+  transition: all 0.6s;
+}
+
+.more_benefits {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+   
+}
+.winners__lists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.more_benefit {
+    display: flex;
+    max-width: 300px;
+    gap: 20px;
+    border: 1px solid #493b1b;
+    padding: 40px 20px;
+    border-radius: 5px;
+    background-color: #041A34;
+}
+.more_benefit:hover {
+    border: 1px solid #b4903a;
+    box-shadow: 0 0 5px #b4903a;
+}
+
+.game_name, .win_amount {
+    color: #8e8888;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+.mobile_navbar__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#sidebar1 {
+  background-color: #020C25;
+  padding: 20px;
+}
+
+.button_two:hover {
+  border-radius: 25px 0;
+  box-shadow: 0 0 15px #b4903a;
+}
+.benefits {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.more_benefitcards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.winners__lists::after {
+ content: "";
+    display: block;
+    position: absolute;
+    border: 1px solid #b4903a;
+    height: 900px;
+    margin-left: -18px;
+}
+.footer_container{
+  z-index: 10;
+  position: relative;
+}
+.benefit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 350px;
+}
+.winner_list {
+    display: flex;
+    color: #ffffff;
+    justify-content: left;
+    gap: 5vw;
+    align-items: center;
+    background-color: #041A34;
+    padding: 10px 10px;
+    border-radius: 10px;
+   flex:1;
+    border: 1px solid transparent;
+}
+.nav_link_mobile {
+  border-bottom: 1px solid #fff;
+  
+}
+.nav_link_mobile:hover {
+  color: #d59d25;
+  border-color: #5b4516;
+}
+
+.winner_list:hover {
+border: 1px solid #b4903a;
+}
+.winner_list::before{
+  content: '○';
+  width: fit-content;
+  color: #d59d25;
+  text-shadow: 0 0 15px;
+  position: absolute;
+  margin-left: -32px;
+ 
+}
+.winner_list::after {
+  content: '—';
+  color: #493b1b;
+  position: absolute;
+  margin-left: -25px;
+} 
+.button_two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+  width: 100%;
+  height: 100%;
+  filter: blur(22px);
+  transform: scale(0.9, 0.8) translateY(20px);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.6s;
+}
+.benefit__heading {
+    font-family: 'primaryFont';
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin: 0;
+    padding: 0;
+    
+}
+.hamburger {
+  color: #fff;
+  font-size: 20px;
+}
+.benefit__icon {
+    font-size: 50px;
+    color: #041A34;
+}
+
+.benefit__section {
+    background-color: #041A34;
+    border-top: 1px solid rgba(103, 105, 103, 0.8);
+    border-bottom: 1px solid rgba(103, 105, 103, 0.8);
+    padding: 10vh 0;
+}
+.more_benefit_section {
+    padding: 10vh 0;
+    background: #041A34;
+    background-image: url('./KasinoClone/assets/aaa.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.more_benefit__icon {
+    color: #d59d25;
+    text-shadow: 0 0 8px #b4903a;
+    font-size: 50px;
+}
+.name_div, .win_amount_section {
+    flex: 1;
+}
+.game_name_section,.empty_div {
+    flex:1;
+}
+.benefit__description {
+    color: aliceblue;
+    line-height: 25px;
+}
+.button_two:hover::before {
+  opacity: 1;
+}
+        
         .right_nav {
             display: flex;
             align-items: center;
@@ -78,7 +338,7 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            min-height: 720px;
+            min-height: 600px;
             padding: auto ;
         }
         .hero__heading_top {
@@ -94,6 +354,7 @@
             font-weight: 700;
             background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             margin: 0;
             padding: 0;
@@ -108,15 +369,22 @@
         }
         .uses_steps {
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            min-height: 170px;
+        }
+        .game__card_section  {
+            margin-top: 10vh;
+            margin-bottom: 20px;
         }
         .user__step {
             display: flex;
             align-items: center;
             gap: 20px;
             flex: 0 0auto;
-            width: 33%;
+            width: 25%;
+            min-width: 300px;
             
             
         }
@@ -126,6 +394,7 @@
             font-weight: 400;
             background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             margin: 0;
             padding: 0;
@@ -136,6 +405,7 @@
             font-weight: 400;
             background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             margin: 0;
             padding: 0;
@@ -153,6 +423,7 @@
             font-weight: 400;
             background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             margin: 0;
             padding: 0;
@@ -163,14 +434,26 @@
             font-weight: 400;
             background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             margin: 0;
             padding: 0;
         }
+        .footer_social__media_a {
+          color: #fff;
+          font-size: 10px;
+          padding: 10px;
+          border: 1px solid #fff;
+          border-radius: 50%;
+        }
+        .footer_social__media_a:hover {
+           background-color: #d59d25;
+           border:1px solid #d59d25;
+        }
         .game__cards {
             display: flex;
             justify-content: space-between;
-            gap:30px;
+            gap:10px;
         }
         .game__card {
             flex: 1;
@@ -187,12 +470,536 @@
             background-repeat: no-repeat;
             border: 2px solid transparent;
             transition: all 1s;
+            box-shadow: 0 0 15px #b4903a;
+            height: fit-content;
         }
         .game__card:hover {
             border: 2px solid #ffae01;
-            box-shadow: 0 0 15px #b4903a;
+            
 
         }
+        .footer__text {
+          color: #fff;
+        }
+        a {
+  text-decoration: none;
+}
+
+.button_one-animation {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #d59d25;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.button_one-animation span {
+  position: absolute;
+  display: block;
+}
+
+.button_one-animation span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #d59d25;
+  animation: btn-anim1 1s linear infinite;
+}
+.footer_manu,.footer_social__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.button_one-animation span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #d59d25;
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.button_one-animation span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background-color: #d59d25;
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.button_one-animation span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #d59d25;
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.button_one-animation:hover {
+background-color: #d59d25;
+  color:#f1f1f1;
+  border-radius: 5px;
+ 
+  box-shadow: 0 0 15px #b4903a;
+}
+.btn {
+  position: relative;
+  width: 250px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+  color: #020C25;
+  border-radius: 80px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  
+  padding-left: 60px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 30px;
+}
+.btn:hover {
+  padding-left: 0;
+  padding-right: 60px;
+  
+}
+.btn span {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  left: 5px;
+  width: 70px;
+  height: 70px;
+  background: #303030;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
+.btn:hover span {
+  left: calc(100% - 76px);
+}
+.btn::after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 100%;
+  z-index: 1;
+  background: rgba(89, 88, 88, 0.5);
+  transform: translateX(-175px) skew(25deg);
+  transition: 0.75s ease-in-out;
+}
+.btn:hover::after {
+  transform: translateX(175px) skew(25deg);
+}
+.hero__texts {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    gap: 20px;
+}
+.card__limit {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #b4903a;
+    text-align: center;
+    line-height: 30px;
+}
+.amp-carousel-button {
+    display: none;
+}
+.normal__heading {
+    margin-bottom: 10vh;
+}
+.button_13 {
+  position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+}
+
+.button_13:hover {
+  background: #d59d25;
+  color: #d59d25;
+  box-shadow: 0 0 35px #d59d25;
+  animation: box 3s infinite;
+}
+
+.button_13::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #272822;
+}
+
+.button_13 span {
+  position: relative;
+  z-index: 1;
+}
+.button_13 i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.headerbar {
+  display: none;
+}
+
+
+.button_13 i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid #d59d25;
+  background: #272822;
+  transition: 0.2s;
+}
+
+.button_13:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+.margin_container {
+    padding:  50px 0;
+}
+.blue_bg {
+  background-color: #020C25;
+}
+.button_13 i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid #d59d25;
+  background: #272822;
+  transition: 0.2s;
+}
+.qna_section {
+  background-color: #041A34;
+}
+
+.button_13:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+.qna_container {
+  display: flex;
+  gap: 10px;
+
+  align-items: center;
+}
+.image_qna {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qna {
+  width: 60%;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px #d59d25;
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+.qna_header {
+  background-color: transparent;
+  padding: 30px;
+  border-color: #b4903a;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.qna_header::before {
+  content: '▼';
+
+position: absolute;
+
+left: 95%;
+
+}
+
+.qna_header[aria-expanded="true"] {
+      color: #b4903a;
+    }
+.qna_content {
+  background-color: transparent;
+  padding: 30px;
+  border: 1px solid#b4903a;
+  border-radius: 0 0 5px 5px;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: -20px;
+} 
+
+   .top_footer__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #727171;
+    padding-bottom: 20px;
+   }
+   .bottom_footer__section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .footer_left__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: .6;
+   }
+   .close-sidebar {
+    color: #fff;
+   }
+   .footer_right__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: .6;
+   }
+   .mobile {
+    display: none;
+   }
+   @media only screen and (max-width: 1200px) {
+
+    .headerbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+    .left_nav,.right_nav,.navbar_flex {
+      display: none;
+    }
+    @media only screen and (max-width: 1056px){
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
+      .game__card {
+        max-width: 350px;
+      }
+      .qna {
+  width: 100%;
+}
+        
+      }
+      }
+      @media only screen and (max-width: 767px){
+        .hero__texts {
+          justify-content: center;
+          align-items: center;
+        }
+        .top_footer__section,.bottom_footer__section {
+          flex-direction: column;
+          gap: 20px;
+         
+        }
+        .footer_manu {
+          flex-wrap: wrap;
+        }
+        .footer__text {
+          text-align: center;
+        }
+        .hero_section {
+          min-height: 0;
+        }
+      }
+      @media only screen and (max-width: 859px){
+        .more_benefit {
+          max-width: 700px;
+        }
+      }
+      @media only screen and (max-width: 440px) {
+        .winners__lists::after {
+          height: 991px;
+        }
+      }
+      @media only screen and (max-width: 616px){
+        .qna_header {
+          padding: 8px;
+        }
+        .qna_header::before {
+          display: none;
+        }
+        .hero_section {
+          background-image: url('./KasinoClone/assets/mobile_hero.jpg');
+        }
+        .hero__heading {
+          font-size: 3.5rem;
+        }
+        .btn {
+    position: relative;
+    width: 25vw;
+    height: 10vw;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(#5b4516, #b4903a 5%, #b4903a, #fffea6, #d6b65f, #b4903a, #b4903a, #5b4516 100%);
+    color: #020C25;
+    border-radius: 80px;
+    font-size: .85rem;
+    font-weight: 700;
+    
+    text-decoration: none;
+    padding-left: 20px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.container {
+  padding: 5px 10px;
+}
+.more_benefit 
+{
+  padding: 20px 10px;
+}
+.winners__lists {
+  padding-left: 20px;
+}
+.btn span {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    left:0;
+    width: 7vw;
+    height: 7vw;
+    background: #303030;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: .8rem;
+    font-weight: 900;
+    transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+}
+      }
+      @media only screen and (max-width: 680px) {
+        .user__step {
+          flex-direction: column;
+          min-width: fit-content;
+          background-color: #020C25;
+          padding: 5px;
+        }
+        .user__step_text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        
+        }
+        .user__step_text__paragraph {
+          text-align: center;
+        }
+        .divider {
+          border: none;
+        }
+      }
+      @media (max-width: 767px) {
+        .normal__heading {
+    font-size: 2rem;
+}
+.benefit__heading {
+  font-size: 1rem;
+
+}
+
+.benefit__description {
+  font-size: .8rem;
+  line-height: normal;
+}
+.benefits {
+  gap: 5px;
+}
+      }
       </style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   </head>
@@ -213,8 +1020,14 @@
                 </div>
             </div>
             <div class="right_nav">
-                <button class="gold_button">Login</button>
-                <button class="gold_button">Registration</button>
+                <button class="button_two">Login</button>
+                <a class="box__link button_one-animation" href="#">
+                    Registration
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </a>
                 <select class="nav_language_selector">
                     <option class="nav_language_option">English</option>
                     <option class="nav_language_option">Hindi</option>
@@ -222,13 +1035,49 @@
                   </select>
             </div>
         </div>
+        <header class="headerbar container">
+          <amp-img src="./KasinoClone/assets/logo.png"
+                  width="150"
+                  height="35"
+                  alt="logo">
+                </amp-img> 
+          <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+   
+        </header>
+        <amp-sidebar id="sidebar1" layout="nodisplay">
+          <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+          <div class="mobile_navbar__item">
+            <a class="nav_link nav_link_mobile" href="#">HOME</a>
+                <a class="nav_link nav_link_mobile" href="#">GAMES</a>
+                <a class="nav_link nav_link_mobile" href="#">FAQ</a>
+                <a class="nav_link nav_link_mobile" href="#">CONTACT</a>
+                <button class="button_two">Login</button>
+                <a class="box__link button_one-animation" href="#">
+                    Registration
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </a>
+                <select class="nav_language_selector">
+                    <option class="nav_language_option">English</option>
+                    <option class="nav_language_option">Hindi</option>
+                    <option class="nav_language_option">Bangla</option>
+                  </select>
+          </div>
+        </amp-sidebar>
     </div>
     <div class="hero_section">
-        <div class="container">
+        <div class="container hero__texts">
             
 <p class="hero__heading_top">Online Casino</p>
 <h1 class="hero__heading">Play Earn </br> and Enjoy</h1>
-<button class="gold_button heading_button">Play Now</button>
+<div class="button_21">
+    <a href="#" class="btn"
+      >Play Now
+      <span>&#8594;</span>
+    </a>
+  </div>
             </div>
         
     </div>
@@ -259,38 +1108,523 @@
     </div>
     <div class="game__card_section container">
         <h1 class="normal__heading">Our Top Games</h1>
+          <amp-carousel
+          class="desktop"
+          type="slides"
+          width="450"
+          height="250"
+          layout="responsive"
+          controls
+          loop
+          autoplay
+          delay="3000"
+          data-next-button-aria-label="Go to next slide"
+          data-previous-button-aria-label="Go to previous slide"
+          role="region"
+          aria-label="Looping carousel"
+        >
         <div class="game__cards">
-            <div class="game__card">
-                <h2 class="card__name">Number Buy</h2>
-                <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
-                  width="250"
-                  height="250"
-                  alt="">
-                </amp-img>
-                <p class="card__limit">Invest Limit: $1.96 - $1000.65</p>
-                <button class="gold_button">Play Now</button>
+          <div class="game__card">
+              <h2 class="card__name">Number Buy</h2>
+              <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
+                width="250"
+                height="250"
+                alt="">
+              </amp-img>
+              <p class="card__limit">Invest Limit:<br/> $1.96 - $1000.65</p>
+              <button class="button_13" style="--clr: #39ff14">
+                  <span>Play Now</span><i></i>
+                </button>
+          </div>
+          <div class="game__card">
+              <h2 class="card__name">Roulette</h2>
+              <amp-img src="./KasinoClone/assets/Roulette.jpg"
+                width="250"
+                height="250"
+                alt="">
+              </amp-img>
+              <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+              <button class="button_13" style="--clr: #39ff14">
+                  <span>Play Now</span><i></i>
+                </button>
+          </div>
+          <div class="game__card">
+              <h2 class="card__name">Zero To Ninty Nine</h2>
+              <amp-img src="./KasinoClone/assets/Zero To Ninty Nine.jpg"
+                width="250"
+                height="250"
+                alt="">
+              </amp-img>
+              <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+              <button class="button_13" style="--clr: #39ff14">
+                  <span>Play Now</span><i></i>
+                </button>
+          </div>
+      </div>
+      <div class="game__cards">
+          <div class="game__card">
+              <h2 class="card__name">Dice Game</h2>
+              <amp-img src="./KasinoClone/assets/Dice Game.jpg"
+                width="250"
+                height="250"
+                alt="">
+              </amp-img>
+              <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+              <button class="button_13" style="--clr: #39ff14">
+                  <span>Play Now</span><i></i>
+                </button>
+          </div>
+          <div class="game__card">
+              <h2 class="card__name">Card Game</h2>
+              <amp-img src="./KasinoClone/assets/Card Game.jpg"
+                width="250"
+                height="250"
+                alt="">
+              </amp-img>
+              <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+              <button class="button_13" style="--clr: #39ff14">
+                  <span>Play Now</span><i></i>
+                </button>
+          </div>
+          <div class="game__card">
+              <h2 class="card__name">Pool Game</h2>
+              <amp-img src="./KasinoClone/assets/Pool Game.jpg"
+                width="250"
+                height="250"
+                alt="">
+              </amp-img>
+              <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+              <button class="button_13" style="--clr: #39ff14">
+                  <span>Play Now</span><i></i>
+                </button>
+          </div>
+      </div>
+        </amp-carousel>
+        <amp-carousel
+        class="mobile"
+        type="slides"
+        width="400"
+        height="200"
+        layout="responsive"
+        controls
+        loop
+        autoplay
+        delay="3000"
+        data-next-button-aria-label="Go to next slide"
+        data-previous-button-aria-label="Go to previous slide"
+        role="region"
+        aria-label="Looping carousel"
+      >
+      <div class="game__card">
+        <h2 class="card__name">Number Buy</h2>
+        <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
+          width="250"
+          height="250"
+         
+          alt="">
+        </amp-img>
+        <p class="card__limit">Invest Limit:<br/> $1.96 - $1000.65</p>
+        <button class="button_13" style="--clr: #39ff14">
+            <span>Play Now</span><i></i>
+          </button>
+    </div>
+    <div class="game__card">
+        <h2 class="card__name">Roulette</h2>
+        <amp-img src="./KasinoClone/assets/Roulette.jpg"
+          width="250"
+          height="250"
+          alt="">
+        </amp-img>
+        <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+        <button class="button_13" style="--clr: #39ff14">
+            <span>Play Now</span><i></i>
+          </button>
+    </div>
+    <div class="game__card">
+        <h2 class="card__name">Zero To Ninty Nine</h2>
+        <amp-img src="./KasinoClone/assets/Zero To Ninty Nine.jpg"
+          width="250"
+          height="250"
+          alt="">
+        </amp-img>
+        <p class="card__limit">Invest Limit:<br/>  $1.96 - $1000.65</p>
+        <button class="button_13" style="--clr: #39ff14">
+            <span>Play Now</span><i></i>
+          </button>
+    </div></amp-carousel>
+    </div>
+    <div class="benefit__section">
+        <div class="container">
+            <h1 class="normal__heading center_heading">Be In Control</h1>
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="gold_button">
+                        <i class="fas fa-wallet benefit__icon"></i>
+                    </div>
+                    <div class="benefit__texts">
+                          <h2 class="benefit__heading">Deposit Limit</h2>
+                          <p class="benefit__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam suscipit magnam.
+                          </p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="gold_button">
+                        <i class="fas fa-coins benefit__icon"></i>
+                    </div>
+                    <div class="benefit__texts">
+                          <h2 class="benefit__heading">Deposit Limit</h2>
+                          <p class="benefit__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam suscipit magnam.
+                          </p>
+                    </div>
+                </div>
+                <div class="benefit">
+                    <div class="gold_button">
+                        <i class="fas fa-hand-paper benefit__icon"></i>
+                    </div>
+                    <div class="benefit__texts">
+                          <h2 class="benefit__heading">Deposit Limit</h2>
+                          <p class="benefit__description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam suscipit magnam.
+                          </p>
+                    </div>
+                </div>
             </div>
-            <div class="game__card">
-                <h2 class="card__name">Roulette</h2>
-                <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
-                  width="250"
-                  height="250"
-                  alt="">
-                </amp-img>
-                <p class="card__limit">Invest Limit: $1.96 - $1000.65</p>
-                <button class="gold_button">Play Now</button>
+
+        </div>
+    </div>
+    <div class="more_benefit_section">
+<div class="container">
+    <h1 class="normal__heading center_heading">More Benefits</h1>
+    <div class="more_benefitcards">
+        <div class="more_benefits">
+            <div class="more_benefit">
+                <div class="">
+                    <i class="fas fa-shield-alt more_benefit__icon"></i>
+                </div>
+                <div class="more_benefit__texts">
+                      <h2 class="benefit__heading">Secure Casino Games</h2>
+                      <p class="benefit__description">
+                        Lorem ipsum dolor sit amet consect adipisicing elit. Aliquam suscipitet magnam ipsum dolor amet.
+                      </p>
+                </div>
             </div>
-            <div class="game__card">
-                <h2 class="card__name">Zero To Ninty Nine</h2>
-                <amp-img src="./KasinoClone/assets/60b749a4dc6421622624676.jpg"
-                  width="250"
-                  height="250"
-                  alt="">
-                </amp-img>
-                <p class="card__limit">Invest Limit: $1.96 - $1000.65</p>
-                <button class="gold_button">Play Now</button>
+            <div class="more_benefit">
+                <div class="">
+                    <i class="fas fa-coins more_benefit__icon"></i>
+                </div>
+                <div class="more_benefit__texts">
+                      <h2 class="benefit__heading">Greate Bonus</h2>
+                      <p class="benefit__description">
+                        Lorem ipsum dolor sit amet consect adipisicing elit. Aliquam suscipitet magnam ipsum dolor amet.
+                      </p>
+                </div>
+            </div>
+            <div class="more_benefit">
+                <div class="">
+                    <i class="fas fa-trophy more_benefit__icon"></i>
+                </div>
+                <div class="more_benefit__texts">
+                      <h2 class="benefit__heading">Higher Win Chance</h2>
+                      <p class="benefit__description">
+                        Lorem ipsum dolor sit amet consect adipisicing elit. Aliquam suscipitet magnam ipsum dolor amet.
+                      </p>
+                </div>
+            </div>
+            <div class="more_benefit">
+              <div class="">
+                  <i class="fas fa-shield-alt more_benefit__icon"></i>
+              </div>
+              <div class="more_benefit__texts">
+                    <h2 class="benefit__heading">Secure Casino Games</h2>
+                    <p class="benefit__description">
+                      Lorem ipsum dolor sit amet consect adipisicing elit. Aliquam suscipitet magnam ipsum dolor amet.
+                    </p>
+              </div>
+          </div>
+          <div class="more_benefit">
+              <div class="">
+                  <i class="fas fa-coins more_benefit__icon"></i>
+              </div>
+              <div class="more_benefit__texts">
+                    <h2 class="benefit__heading">Greate Bonus</h2>
+                    <p class="benefit__description">
+                      Lorem ipsum dolor sit amet consect adipisicing elit. Aliquam suscipitet magnam ipsum dolor amet.
+                    </p>
+              </div>
+          </div>
+          <div class="more_benefit">
+              <div class="">
+                  <i class="fas fa-trophy more_benefit__icon"></i>
+              </div>
+              <div class="more_benefit__texts">
+                    <h2 class="benefit__heading">Higher Win Chance</h2>
+                    <p class="benefit__description">
+                      Lorem ipsum dolor sit amet consect adipisicing elit. Aliquam suscipitet magnam ipsum dolor amet.
+                    </p>
+              </div>
+          </div>
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    <div class="blue_bg">
+      <div class="investors_list_section container">
+        <div class="margin_container">
+            <h1 class="normal__heading investors_heading">Top Winners</h1>
+            <div class="list_container">
+              <div class="list_devider"></div>
+            <ul class="winners__lists">
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_3.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                 <div class="name_div"> <h3 class="winner_name">f33 h</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_1.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                  <div class="name_div"><h3 class="winner_name">john Doa</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_2.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                 <div class="name_div"> <h3 class="winner_name">Aaa a</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li> <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_3.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                 <div class="name_div"> <h3 class="winner_name">f33 h</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_1.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                  <div class="name_div"><h3 class="winner_name">john Doa</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_2.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                 <div class="name_div"> <h3 class="winner_name">Aaa a</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li> <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_3.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                 <div class="name_div"> <h3 class="winner_name">f33 h</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_1.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                  <div class="name_div"><h3 class="winner_name">john Doa</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+              <li class="winner_list">
+                  <amp-img src="./KasinoClone/assets/winner_2.jpg"
+                    width="60"
+                    height="60"
+                    style="border-radius: 5px;"
+                    alt="">
+                  </amp-img>
+                 <div class="name_div"> <h3 class="winner_name">Aaa a</h3></div>
+                  <div class="game_name_section">
+                      <p class="game_name">Game Name</p>
+                      <h5 class="game">Poll Game</h5>
+                  </div>
+                  <div class="win_amount_section">
+                      <p class="win_amount">Win Amount</p>
+                      <h5 class="amount">100$</h5>
+                  </div>
+                  <div class="empty_div"></div>
+              </li>
+          </ul>
             </div>
         </div>
+    </div>
+    </div>
+    <div class="qna_section">
+      <div class="container">
+        <div class="margin_container">
+          <h1 class="normal__heading">Frequently Asked Questions</h1>
+          <div class="qna_container">
+            
+              <amp-accordion class="qna" expand-single-section animate>
+                <section class="qnaa">
+                  <h4 class="qna_header">Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h4>
+                  <p class="qna_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perspiciatis harum voluptatibus natus alias nesciunt eius similique tenetur corporis fuga eligendi in enim quisquam dolor voluptates nihil obcaecati pariatur commodi facilis, officiis nobis porro eum architecto! Delectus ut voluptatibus voluptatem, aliquam tenetur et facilis, quia veritatis temporibus, ex magni soluta.</p>
+                </section>
+                <section>
+                  <h4 class="qna_header">Doloremque perspiciatis harum voluptatibus natus?</h4>
+                 <p class="qna_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perspiciatis harum voluptatibus natus alias nesciunt eius similique tenetur corporis fuga eligendi in enim quisquam dolor voluptates nihil obcaecati pariatur commodi facilis, officiis nobis porro eum architecto! Delectus ut voluptatibus voluptatem, aliquam tenetur et facilis, quia veritatis temporibus, ex magni soluta.</p>
+                </section>
+                <section>
+                  <h4 class="qna_header">Nesciunt eius similique tenetur corporis fuga?</h4>
+                  <p class="qna_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perspiciatis harum voluptatibus natus alias nesciunt eius similique tenetur corporis fuga eligendi in enim quisquam dolor voluptates nihil obcaecati pariatur commodi facilis, officiis nobis porro eum architecto! Delectus ut voluptatibus voluptatem, aliquam tenetur et facilis, quia veritatis temporibus, ex magni soluta. </p>
+                </section>
+                <section>
+                  <h4 class="qna_header">Eligendi in enim quisquam dolor voluptates nihil?</h4>
+                  <p class="qna_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perspiciatis harum voluptatibus natus alias nesciunt eius similique tenetur corporis fuga eligendi in enim quisquam dolor voluptates nihil obcaecati pariatur commodi facilis, officiis nobis porro eum architecto! Delectus ut voluptatibus voluptatem, aliquam tenetur et facilis, quia veritatis temporibus, ex magni soluta. </p>
+                </section>
+                <section>
+                  <h4 class="qna_header">Doloremque perspiciatis harum voluptatibus natus?</h4>
+                  <p class="qna_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perspiciatis harum voluptatibus natus alias nesciunt eius similique tenetur corporis fuga eligendi in enim quisquam dolor voluptates nihil obcaecati pariatur commodi facilis, officiis nobis porro eum architecto! Delectus ut voluptatibus voluptatem, aliquam tenetur et facilis, quia veritatis temporibus, ex magni soluta. </p>
+                </section>
+              </amp-accordion>
+          
+            <div class="image_qna">
+              <amp-img src="./KasinoClone/assets/Qna Section Image.png"
+                width="350"
+                height="300"
+                class="qna_img desktop"
+                alt="">
+              </amp-img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_section">
+      <div class="container footer_container">
+        <div class="top_footer__section">
+          <amp-img src="./KasinoClone/assets/logo.png"
+          width="150"
+          height="35"
+          alt="logo">
+        </amp-img> 
+        <div class="footer_manu">
+          <a class="footer_manu__a" href="#">Games</a>
+          <a class="footer_manu__a" href="#">Faq</a>
+          <a class="footer_manu__a" href="#">Privacy and Policy</a>
+          <a class="footer_manu__a" href="#">Terms and Condition
+          </a>
+        </div>
+        </div>
+        <div class="bottom_footer__section">
+          <p class="footer__text">Copyright © 2021 All Right Reserved</p>
+          <div class="footer_social__media">
+            <a href="#" class="footer_social__media_a"><i class="fab fa-facebook"></i> </a>
+            <a href="#" class="footer_social__media_a"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer_social__media_a"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer_social__media_a"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+       
+          
+        
+      </div>
+      <amp-img src="./KasinoClone/assets/footer_one.png"
+            width="150"
+            height="100"
+      class="footer_left__img"
+            alt="">
+          </amp-img>
+          <amp-img src="./KasinoClone/assets/footer_two.png"
+            width="100"
+            height="100"
+      class="footer_right__img"
+            alt="">
+          </amp-img>
     </div>
   </body>
 </html>
