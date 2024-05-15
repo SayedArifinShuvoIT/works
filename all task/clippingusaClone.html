@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClippingUSA-Home</title>
+    <link rel="stylesheet" href="./ClippingUSAClone/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function initComparisons() {
+        var x, i;
+        /*find all elements with an "overlay" class:*/
+        x = document.getElementsByClassName("img-comp-overlay");
+        for (i = 0; i < x.length; i++) {
+          /*once for each "overlay" element:
+          pass the "overlay" element as a parameter when executing the compareImages function:*/
+          compareImages(x[i]);
+        }
+        function compareImages(img) {
+          var slider, img, clicked = 0, w, h;
+          /*get the width and height of the img element*/
+          w = img.offsetWidth;
+          h = img.offsetHeight;
+          /*set the width of the img element to 50%:*/
+          img.style.width = (w / 2) + "px";
+          /*create slider:*/
+          slider = document.createElement("DIV");
+          slider.setAttribute("class", "img-comp-slider");
+          /*insert slider*/
+          img.parentElement.insertBefore(slider, img);
+          /*position the slider in the middle:*/
+          slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+          slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+          /*execute a function when the mouse button is pressed:*/
+          slider.addEventListener("mousedown", slideReady);
+          /*and another function when the mouse button is released:*/
+          window.addEventListener("mouseup", slideFinish);
+          /*or touched (for touch screens:*/
+          slider.addEventListener("touchstart", slideReady);
+          /*and released (for touch screens:*/
+          window.addEventListener("touchend", slideFinish);
+          function slideReady(e) {
+            /*prevent any other actions that may occur when moving over the image:*/
+            e.preventDefault();
+            /*the slider is now clicked and ready to move:*/
+            clicked = 1;
+            /*execute a function when the slider is moved:*/
+            window.addEventListener("mousemove", slideMove);
+            window.addEventListener("touchmove", slideMove);
+          }
+          function slideFinish() {
+            /*the slider is no longer clicked:*/
+            clicked = 0;
+          }
+          function slideMove(e) {
+            var pos;
+            /*if the slider is no longer clicked, exit this function:*/
+            if (clicked == 0) return false;
+            /*get the cursor's x position:*/
+            pos = getCursorPos(e)
+            /*prevent the slider from being positioned outside the image:*/
+            if (pos < 0) pos = 0;
+            if (pos > w) pos = w;
+            /*execute a function that will resize the overlay image according to the cursor:*/
+            slide(pos);
+          }
+          function getCursorPos(e) {
+            var a, x = 0;
+            e = (e.changedTouches) ? e.changedTouches[0] : e;
+            /*get the x positions of the image:*/
+            a = img.getBoundingClientRect();
+            /*calculate the cursor's x coordinate, relative to the image:*/
+            x = e.pageX - a.left;
+            /*consider any page scrolling:*/
+            x = x - window.pageXOffset;
+            return x;
+          }
+          function slide(x) {
+            /*resize the image:*/
+            img.style.width = x + "px";
+            /*position the slider:*/
+            slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+          }
+        }
+      }
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/css/twentytwenty.min.css">
+</head>
+<body>
+    <div class="topbar__section">
+           <div class="container ">
+            <div class="topbar__container">
+                <div class="contact__section_container">
+                    <div class="topbar__contact ">
+                        <i class="fas fa-envelope topbar__contact_icon"></i>
+                        <p class="contactUS__paragraph">info@clippingusa.com</p>
+                       </div>
+                        <div class="devider"></div>
+                       <div class="topbar__contact">
+                        <i class="fas fa-phone topbar__contact_icon"></i>
+                        <p class="contactUS__paragraph">+123456789</p>
+                       </div>
+                   </div>
+                   <div class="topbar__social_media">
+                    <a href="" class="social__media_a"><i class="fab fa-facebook-f topbar__social_icon"></i></a>
+                    <a href="" class="social__media_a"><i class="fab fa-google-plus-g topbar__social_icon"></i></a>
+                    <a href="" class="social__media_a"><i class="fab  fa-twitter topbar__social_icon"></i></a>
+                    <a href="" class="social__media_a"><i class="fab fa-linkedin-in topbar__social_icon"></i></a>
+                    <a href="" class="social__media_a"><i class="fab fa-youtube topbar__social_icon"></i></a>
+                   </div>
+            </div>
+               
+           </div>
+           
+    </div>
+    <div class="middlebar__section container">
+     <img src="./ClippingUSAClone/assets/Clipping-USA.png" alt="logo">
+     <audio controls>
+        <source src="audio_file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <button class="try__us_button">TRY US NOW</button>
+    </div>
+    <div class="navbar__section">
+        <div class="container navbar__container">
+            <a href="#" class="navbar__a">home</a>
+            <a href="#" class="navbar__a">about</a>
+            <div class="dropdown">
+                <a class="navbar__a">services <i class="fas fa-caret-down topbar__social_icon"></i></a>
+                <div class="dropdown-content">
+                    <a class="dropdown_a" href="#">Clipping Path Service Provider</a>
+                    <a class="dropdown_a" href="#">Photo Retouching</a>
+                    <a class="dropdown_a" href="#">Photo Restoration</a>
+                    <a class="dropdown_a" href="#">Natural Shadow</a>
+                    <a href="" class="dropdown_a">Reflaction Shadow</a>
+                    <a href="" class="dropdown_a">Drop Shadow</a>
+                    <a href="" class="dropdown_a">Bulk Professional Color Correction Service</a>
+                    <a href="" class="dropdown_a">Photoshop Masking</a>
+                </div>
+            </div>
+            <a href="#" class="navbar__a">free trial</a>
+            <div class="dropdown">
+                <a href="#" class="navbar__a">upload <i class="fas fa-caret-down topbar__social_icon"></i></a>
+            <div class="dropdown-content">
+                <a class="dropdown_a" href="#">Web Upload</a>
+                <a class="dropdown_a" href="#">FTP Upload</a>
+
+            </div>
+            </div>
+            <a href="#" class="navbar__a">prices</a>
+            <a href="#" class="navbar__a">payment</a>
+            <a href="#" class="navbar__a">contact us</a>
+            <a href="#" class="navbar__a">FAQ</a>
+            <a href="#" class="navbar__a">blog</a>
+        </div>
+    </div>
+    <div class="slider__hero_section">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img class="hero__slider_img img_1" src="./ClippingUSAClone/assets/download.jpg" alt="">
+                <div class="typing-demo">
+                    Your trusted Photo Editing Company
+                  </div>
+            </div>
+              <div class="swiper-slide"><img class="hero__slider_img img_2" src="./ClippingUSAClone/assets/slider-2.jpg" alt="">
+                <div class="typing-demo">
+                    Remove Background with One Click
+                  </div>
+            </div>
+              <div class="swiper-slide">
+                <img class="hero__slider_img img_3" src="./ClippingUSAClone/assets/photo-retouching-services-1.jpg" alt="">
+                <div class="typing-demo">
+                    We are the best online Editing Tool
+                </div>
+                </div>
+              
+            </div>
+        
+          </div>
+    </div>
+    <div class="section">
+        <div class="heading_section">
+            <h1 class="heading">
+                Clipping Path Service provider
+            </h1>
+        </div>
+        <div class="Service__provider_sectinon">
+            <div class="Service__provider_sectinon--one">
+                <h4 class="secondary__heading">
+                    Experience the quality & cost effective service.
+                </h4>
+                <div class="service__provider_desc">
+                    <p style="text-align: justify">Clipping USA is a <strong>Professional Clipping Path Service Provider</strong> located in Maryland, the USA which is operated by some highly experienced professionals. It provides the best quality for <em><strong>Photo Editing Service</strong> / </em><strong><i>Image Editing Services</i></strong> all over the world. We have a deep concern, especially for USA &amp; UK customers. The USA customers can get a background removal or clipping path service in USA and the UK customers in UK with a global standard. Our Customers have a good experience with our services and acknowledge it as one of the best <strong>Clipping path service provider Companies</strong> in USA. It has become a world-class Online Image Editing Service Provider for its extraordinary working skills and practical experiences. Most of our existing customers are from the USA, Canada, Australia, UK, Germany, Sweden, Italy, Denmark, Netherlands, Japan to name a few. One can easily differ "Clipping USA" from any other competitors as a reliable Photoshop Clipping Path Service Provider especially for the best prices, turnaround, quality, and communication.</p><p style="text-align: justify"><strong><span style="color: #00ccff">Key Features:</span></strong></p><p style="text-align: justify"><strong> Low-Cost Image Editing Service</strong> with Excellent Quality, Quick Turnaround time, Highly Experienced Graphic Designers, 24 Hours Shifting Duty Plan Round the Year, Frequent Quality Checking System, 100% Money Back Guarantee, High-Speed Internet, Easy and flexible system for upload and download files, Safe FTP System, Reserved Team in order to Rush/Urgent Delivery.</p><p style="text-align: justify"><strong><span style="color: #00ccff">Our Vision:</span></strong></p><p style="text-align: justify">We had the vision to show our ability and skill to the global market as a competitor of other renowned <u>Photo Editing Service Provider</u> companies. We would love to introduce <span style="color: #318ce7">Clipping USA</span> to the international community of Graphic Design and Online Photoshop service buyers.</p>
+                    
+                    <div class="every-page-button ">
+                        <a class="service__provider_section-button" href="https://www.clippingusa.com/free-trial/">get a quote</a>
+                    </div>								
+                </div>
+            </div>
+            
+            <div class="Service__provider_sectinon--two">
+                <div id="before-after-slider" class="img__beforeafter_container">
+                    <div id="before-image">
+                        <img class="img" src="./ClippingUSAClone/assets/Photoshop-masking-service-before.jpg" alt="Before">
+                    </div>
+                    <div id="after-image">
+                        <img class="img" src="./ClippingUSAClone/assets/Photoshop-masking-service-after.png" alt="After">
+                    </div>
+                    <div id="resizer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="shadow__service_container">
+            <div class="shadow__service_one">
+              <div class="img-comp-container">
+                <div class="img-comp-img">
+                  <img src="./ClippingUSAClone/assets/shadow-services-photography - Copy.jpg" >
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                  <img src="./ClippingUSAClone/assets/shadow-service-before-Clipping-USA.jpg" >
+                </div>
+              </div>
+            </div>
+            <div class="shadow__service_two">
+                <h4 class="secondary__heading">
+                    Experience the quality & cost effective service.
+                </h4>
+                <div class="service__provider_desc">
+                    <p style="text-align: justify">Clipping USA has a team of 135 professional Image Editing artists. They are ready to fulfill your requirements by providing the best quality for any of your expected online outsource services as a renowned <strong><i>Clipping Path Service Company</i></strong>. Our team members have a vast knowledge of Photoshop, and <i> Photo Editing Service</i> as most of them have been graduated from reputed graphic institutions. They are devoted and dedicated to the welfare of this organization. Each team is assigned under a team leader to lead their group effectively who is supplied with all technical facilities and freedom for a fair work environment. We usually offer all kinds of <i> Photoshop Image Editing Service</i> at a remarkably lower cost, especially for UK &amp; USA customers. We firmly believe that you can save your money in spite of having global service quality. For all of our customers – the offering service names are given below since these are called different names by Global Customers. So we also named them in detail here.</p><p style="text-align: justify"><strong>Image editing services</strong>: Clipping path service– (outline path, color path, <u>image silo</u>, <u>Photoshop clipping mask</u>, multi path/multiple clipping paths,<u> Photo cut out</u>, cut out an image, Background removal, <u>remove background from image</u> or deep etching service. Photoshop masking service– (Image masking/Photo masking,<u> layer mask</u>, <u>Photoshop hair masking</u>, <u>masking in Photoshop</u> alpha channel masking). Photo retouching services– (<u>professional photo retouching</u> wedding photo editing, model retouch, product retouch, jewelry retouch, image enhancement, <u>photo restoration, and retouching</u>). Shadow creation service– (<u>light manipulation</u>, <u>shadow manipulation</u>,<u> drop shadow</u>, natural shadow, <u>reflection</u> shadow, original shadow). Image Manipulation Service– <u>neck join</u>/neck joint/ghost manipulation/ghost mannequin. Color correction service– Color changing, <u>Photoshop color correction</u> Color adjustment, <u>color correction in Photoshop</u>. Logo Design Service– creative logo design for e-commerce or multi-national company and raster to vector conversion services.</p>					
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h4 class="secondary__heading">
+            Background Removal Service Offer!
+        </h4>
+        <div class="service__provider_desc">
+            <p style="text-align: justify">Clipping USA offers a cost-effective <em>Background Removal Service/Clipping Path Service</em> for our Global customers. Our basic price is US$0.25 per image only for clipping. We believe that our reasonable price and quality will make a path to a reliable business relationship. Many of our new customers in the UK &amp; USA are writing their success story by saving time and money every day. The reliability that works behind their happiness and makes them carrying business.</p><p style="text-align: justify">Our production facility is for 24/7. Clipping USA keeps its service operational every day. No matter what our clients are guaranteed to have our services even on Christmas vacation. As an offshore outsourcing company, we ensure you for guaranteed <b><i> Image Editing Services</i></b> solution. To add here, we can handle 3500-5000 images daily for<strong><u> clipping path</u></strong> or <u>background removal service</u>.</p>						
+        </div>
+    </div>
+    <div class="discount__section">
+        <div class="discount_container container">
+            <p class="discount__text">
+                A Special Discount On Clipping Path Service!!!
+            </p>
+            <button class="discount__button">Free Trial</button>
+        </div>
+    </div>
+    <div class="section section__feature">
+        <div class="section__feature_one">
+            <div class="tab-container">
+                <button class="tablink active" onclick="openTab(event, 'tab1')">Reviews</button>
+                <button class="tablink" onclick="openTab(event, 'tab2')">Focus On</button>
+                <button class="tablink" onclick="openTab(event, 'tab3')">Services</button>
+              
+                <div id="tab1" class="tabcontent">
+                 <p class="tab__description service__provider_desc">
+                    Clipping USA explores the things which are essential for customers. No doubt a customer usually takes a short review on a service provider company. To assist in this regard has been represented it's abilities, global values in photo editing services. For a client to begin or keep on working with a company there should be a convincing reason that we takes with extreme confidence to announce the name Clipping USA where a customer must get a better service. It is the best Image Editing Company recognized by its thousands of Customers.The acknowledgment of customers gives a shade on the ultimate result of each completed project.
+                 </p>
+                </div>
+              
+                <div id="tab2" class="tabcontent">
+                    <p class="tab__description service__provider_desc">
+                        We always focus on Client benefit that is essential and in this case, a customer can also differentiate our company Clipping USA from other competitors in the competitive market. The relationship with customer works as a component of the business. We approach our clients with deference and make them feel exceptional or special. The key, obviously, is that the excellent dimension of our image editing services must be steady and everybody in our business plan. It provides some of the committed services in USA, Canada, Australia, Sweden, UK, Denmark, Italy, Japan, and some more countries with maintaining a high standard.
+                     </p>
+                </div>
+              
+                <div id="tab3" class="tabcontent">
+                    <p class="tab__description service__provider_desc">
+                        Clipping USA provides some of the committed services to it's customers of USA, Canada, Australia, Sweden, UK, Denmark, Italy, Japan, and some more countries with maintaining a high standard.The services are Clipping Paths, image masking, photo retouching, background removal, color correction, hair masking, high-end touch-up, product shadow creation, neck joint service, vector conversion or any other image editing service. Clipping USA allows the upload platform that is convenient to customer, as Like Hightail, Dropbox, FTP, WeTransfer, Google Drive or any others. Clipping USA also provides the dedicated server facility especially for the regular customers.
+                     </p>
+                </div>
+              </div>
+          
+        </div>
+        <div class="section__feature_two">
+            <img src="./ClippingUSAClone/assets/Clipping_watch.png" alt="clippingWatch">
+        </div>
+        <div class="section__feature_tree">
+            <div class="accordion">
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    Specialties
+                    <div class="accordion-icon">+</div>
+                  </div>
+                  <div class="accordion-content">
+                    <div class="panel">
+                      <p>We always focus on Client benefit that is essential and in this case, a customer can also differentiate a company in the competitive market.</p>
+                      <ul>
+                        <li class="accordion_li">Rush Service</li>
+                        <li class="accordion_li">Overnight Delivery</li>
+                        <li class="accordion_li">Hand-drawn Clipping Path</li>
+                        <li class="accordion_li">Price Starts at $0.25</li>
+                        <li class="accordion_li">Volume Discount on bulk orders</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    More Benifits
+                    <div class="accordion-icon">+</div>
+                  </div>
+                  <div class="accordion-content">
+                    <div class="panel">
+                      <p>You will get some more benefits from us.</p>
+                      <ul>
+                        <li class="accordion_li">Save Money &amp; Time</li>
+                        <li class="accordion_li">Quick Turnaround</li>
+                        <li class="accordion_li">Discount On Regular And Bulk Projects</li>
+                        <li class="accordion_li">Fast Communication</li>
+                        <li class="accordion_li">Easy Payment</li>
+                        <li class="accordion_li">Easy Upload And Download</li>
+                        <li class="accordion_li">Monthly Payment Facilities</li>
+                        <li class="accordion_li">Live Chart Support</li>
+                      </ul>
+                                            
+                    
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    KEY Advantages
+                    <div class="accordion-icon">+</div>
+                  </div>
+                  <div class="accordion-content">
+                    <div class="panel">
+                      <p>The clients will have some advantages of Photograph Altering from Clipping USA: Appropriately altered photos&nbsp; speak to the brand and pass on an organizations' message in the most ideal way.</p>
+                      <ul>
+                        <li class="accordion_li">Brand Building</li>
+                        <li class="accordion_li">Better Deals</li>
+                        <li class="accordion_li">Manufacture Decency and Validity</li>
+                        <li class="accordion_li">Hearty Online life Procedure</li>
+                        <li class="accordion_li">Get a better Proficiency</li>
+                      </ul>                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+
+    </div>
+    
+      <div class="image__edititng_service">
+        <div class="section">
+          <div class="heading_section">
+            <h1 class="heading">
+                Clipping Path Service provider
+            </h1>
+        </div>
+        <ul class="clipping_list_ul">
+          <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Photoshop Clipping path | Image Silo Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Background Removal | Photo Cut Out Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Image Masking Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Photo Retouching Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Shadow Creation Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Neck Join | Ghost Mannequin Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Image Manipulation Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Raster to Vector Conversion Service</a></li>
+              <li class="clipping_list"><a class="clipping_list_a" href=""><i class="fas fa-check-circle clipping_list_icon"></i>Photo Retouching Service</a></li>
+</ul>
+        </div>
+      </div>
+
+      <div class="img__portfolio">
+        <div class="section">
+          <div class="heading_section">
+            <h1 class="heading">
+              PORTFOLIO of Photo Editing Service
+            </h1>
+        </div>
+          <div class="image__filter_section">
+            <div class="filter__buttons">
+              <a class="filter-btn all" data-filter="all">All</a>
+            <a class="filter-btn" data-filter="clipping-path">Clipping Path</a>
+            <a class="filter-btn" data-filter="masking">Masking</a>
+            <a class="filter-btn" data-filter="retouching">Retouching</a>
+            <a class="filter-btn" data-filter="drop-shadow">Drop Shadow</a>
+            <a class="filter-btn" data-filter="natural-shadow">Natural Shadow</a>
+            <a class="filter-btn" data-filter="reflection-shadow">Reflection Shadow</a>
+            <a class="filter-btn" data-filter="color-correction">Color Correction</a>
+            <a class="filter-btn" data-filter="neck-joint">Neck Joint</a>
+            <a class="filter-btn" data-filter="vector">Vector</a>
+            </div>
+  <div class="images">
+      <img src="./ClippingUSAClone/assets/bowl-backg-remove-1.jpg" class="clipping-path portfolio__image">
+      <img src="./ClippingUSAClone/assets/chair-backg-remove.jpg" class="clipping-path portfolio__image">
+      <img src="./ClippingUSAClone/assets/Clippingpath-Clipping_USA.jpg" class="clipping-path portfolio__image">
+      <img src="./ClippingUSAClone/assets/Clippingpath_Clipping-USA.jpg" class="clipping-path portfolio__image">
+      <img src="./ClippingUSAClone/assets/Hair-Masking.jpg" class="masking portfolio__image">
+      <img src="./ClippingUSAClone/assets/Model-Masking.jpg" class="masking portfolio__image">
+      <img src="./ClippingUSAClone/assets/Hair-Masking-2.jpg" class="masking portfolio__image">
+      <img src="./ClippingUSAClone/assets/Hair_Masking.jpg" class="masking portfolio__image">
+      <img src="./ClippingUSAClone/assets/Masking-12.jpg" class="retouching portfolio__image">
+      <img src="./ClippingUSAClone/assets/RBMG-standard-1-1.jpg" class="drop-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Product_drop-shadow.jpg" class="drop-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Dropshadow_ClippingUSA.jpg" class="drop-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Product_drop_shadow-.jpg" class="drop-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Natural-Shadow-1-1.jpg" class="natural-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Natural-Shadow-15-1.jpg" class="natural-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Natural-Shadow-20.jpg" class="natural-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Natural-Shadow-8.jpg" class="natural-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/1-23-1.jpg" class="reflection-shadow portfolio__image">
+      <img src="./ClippingUSAClone/assets/Color-Correction-7-1.jpg" class="color-correction portfolio__image">
+      <img src="./ClippingUSAClone/assets/Neck-Joint-2-1.jpg" class="neck-joint portfolio__image">
+      <img src="./ClippingUSAClone/assets/Clipping-usa-vector-3.jpg" class="vector portfolio__image">
+    
+
+  </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="heading_section">
+          <h1 class="heading">
+            Free Trial
+          </h1>
+      </div>
+      <div class="form__section">
+        <div class="form_left">
+          <div class="col-md-4 pl-0 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+						<h2 class="form__heading">Get in Touch and <span class="form__heading_span">Start</span> a Project with Us</h2>
+						<p class="form__paragraph">If the file size is more than 20 MB, kindly use our web upload system to send your test images. We will reply you  within a few minutes.</p>
+					</div>
+        </div>
+        <div class="form_right">
+          <form action="#">
+            <div class="form__upper_div">
+              <input class="upper_input" type="text" placeholder="Name*" required>
+              <input class="upper_input" type="text" placeholder="Company">
+              <input class="upper_input" type="text" placeholder="Address*" required>
+              <input class="upper_input" type="text" placeholder="Phone*" required>
+              <input class="upper_input" type="text" placeholder="Email*" required>
+              <input class="upper_input" type="text" placeholder="Web URL">
+              <select class="upper_select" name="" id="" disabled>
+                <option value="#">Select Category</option>
+              </select>
+              <input class="upper_input" type="file" name="" id="">
+              <input class="upper_input" type="file" name="" id="">
+            </div>
+            <div class="form__lawer_div">
+              <textarea class="form__textarea" name="" id="" placeholder="Description..."></textarea>
+              <button class="form__submit_button">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+      <div class="upload__section">
+        <div class="black_bg">
+          <div class="heading_section">
+            <h1 class="heading">
+              Upload
+            </h1>
+            
+        </div>
+        </div>
+        <div class="upload__file_section">
+          <div class="middle">
+            <h2 class="upload__file_heading">
+              Deliver files directly to
+            </h2>
+            <img src="./ClippingUSAClone/assets/sm-logo.png" alt="" class="sm_logo">
+            <p class="upload__site_name">Clipping USA</p>
+            <p class="upload__site_email">info@clippingusa.com</p>
+            <div class="dragDrop__container " id="dropArea">
+              <p class="dragDrop__text_itelic">Drag files anywhere</p>
+              <p class="dragDrop__text_normal">or add from</p>
+              <button class="dragDrop__button" onclick="uploadFile()">My Computer</button>
+    <input type="file" id="fileInput" style="display: none;" onchange="handleFiles(this.files)">
+            </div>
+          </div>
+        
+      </div>
+      </div>
+      <div class="section blog__section">
+        <div class="heading_section">
+          <h1 class="heading">
+            Our Photo Editing Services
+          </h1>
+          <div class="blog__container">
+            <div class="blog">
+              <img src="./ClippingUSAClone/assets/Vector-Clipping-USA-2.jpg" alt="" class="blog__img">
+              <div class="blog__texts">
+                <h3 class="blog__heading">Vector Conversion</h3>
+                <p class="blog_desc"><strong>Raster to Vector Conversion:&nbsp;</strong>Clipping USA provides flawless and accurate R<strong>aster to Vector Conversion</strong>. Raster images are the series of pixels or digital dots arranged in certain and</p>
+                <a href="#" class="blog__readmore">Read More</a>
+              </div>
+            </div>
+            <div class="blog">
+              <img src="./ClippingUSAClone/assets/Neck-Joint-1.jpg" alt="" class="blog__img">
+              <div class="blog__texts">
+                <h3 class="blog__heading">Photo Editing Service</h3>
+                <p class="blog_desc"><strong>Photo Editing Service:</strong> To make any kinds of change on a&nbsp;photo is called <strong>photo&nbsp;editing</strong>. It depends actually on one’s needs. Basically a&nbsp;</p>
+                <a href="#" class="blog__readmore">Read More</a>
+              </div>
+            </div>
+            <div class="blog">
+              <img src="./ClippingUSAClone/assets/clipping-path.jpg" alt="" class="blog__img">
+              <div class="blog__texts">
+                <h3 class="blog__heading">Clipping path</h3>
+                <p class="blog_desc"><strong>Photoshop Clipping Path</strong> is a technique that is mostly used for removing background of original image. It is used for Media photographers, web design organization, fashion agencies, magazine design</p>
+                <a href="#" class="blog__readmore">Read More</a>
+              </div>
+            </div>
+            <div class="blog">
+              <img src="./ClippingUSAClone/assets/Masking-9.jpg" alt="" class="blog__img">
+              <div class="blog__texts">
+                <h3 class="blog__heading">Masking</h3>
+                <p class="blog_desc"><strong>Photoshop Masking Service</strong> is the process to remove or replace the background of the complex images having numerous turns and curves with blurred or fuzzy edges. This technique is applied where only</p>
+                <a href="#" class="blog__readmore">Read More</a>
+              </div>
+            </div>
+            <div class="blog">
+              <img src="./ClippingUSAClone/assets/Retouching-clippingusa.jpg" alt="" class="blog__img">
+              <div class="blog__texts">
+                <h3 class="blog__heading">Retouching</h3>
+                <p class="blog_desc">In the <strong>photo editing</strong> sector <strong>retouching</strong> is the most important service. It plays a vital role to make a raw photograph into a new style and attractive looks. By this service you can</p>
+                <a href="#" class="blog__readmore">Read More</a>
+              </div>
+            </div>
+            <div class="blog">
+              <img src="./ClippingUSAClone/assets/Shadow-service-1.jpg" alt="" class="blog__img">
+              <div class="blog__texts">
+                <h3 class="blog__heading">Shadow</h3>
+                <p class="blog_desc"><strong>Shadow service</strong> is a system of graphic design which creates an object over the rest of an image by laying a direct shade behind the object. This is used to add  a</p>
+                <a href="#" class="blog__readmore">Read More</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="section">
+        <div class="Service__provider_sectinon">
+            <div class="Service__provider_sectinon--one">
+                <h4 class="secondary__heading clipping">
+                  Clipping Path
+                </h4>
+
+                <h2 class="secondary__clipping_heading">experience with quality & cost effective service.</h2>
+                <div class="service__provider_desc">
+                  <div class="clipping-txt">
+						        <p style="text-align: justify">Clipping path is a way or system which is applied with Photoshop pen tool to cut out an image from its background using a closed vector path or shape. It implies this is the manner in which that is utilized to expel and alter the foundation of a picture.</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Reasonable Price</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24"> Faster Turnaround</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Unique Quality</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;24/7 Service</p>
+
+						</div>
+                    
+                    <div class="every-page-button ">
+                        <a class="service__provider_section-button" href="https://www.clippingusa.com/free-trial/">get a quote</a>
+                    </div>								
+                </div>
+            </div>
+            
+            <div class="Service__provider_sectinon--two">
+              <div class="img-comp-container">
+                <div class="img-comp-img">
+                  <img src="./ClippingUSAClone/assets/clipping-path-service-before-Clipping-USA.jpg" >
+                </div>
+                <div class="img-comp-img img-comp-overlay">
+                  <img src="./ClippingUSAClone/assets/clipping-path-service-after-Clipping-USA-removebg-preview.png" >
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="shadow__service_container">
+          <div class="shadow__service_one">
+            <div class="img-comp-container">
+              <div class="img-comp-img">
+                <img src="./ClippingUSAClone/assets/image-masking-service-before-Clipping-USA.png" >
+              </div>
+              <div class="img-comp-img img-comp-overlay">
+                <img src="./ClippingUSAClone/assets/image-masking-service-after-Clipping-USA.png" >
+              </div>
+            </div>
+          </div>
+          <div class="shadow__service_two">
+            <h4 class="secondary__heading clipping">
+              photoshop masking
+            </h4>
+
+            <h2 class="secondary__clipping_heading">experience with quality & cost effective service.</h2>
+            <div class="service__provider_desc">
+              <div class="clipping-txt">
+                <p style="text-align: justify">Photoshop masking service is the most accurate way of removing the background. It is applicable for hair, fur and blurred edges. Layer masking, Alpha channel Masking, Collage Masking, Transparent image masking are some common categories of it.</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Reasonable Price</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24"> Faster Turnaround</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Unique Quality</p>
+<p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;24/7 Service</p>
+
+
+        </div>
+                
+                <div class="every-page-button ">
+                    <a class="service__provider_section-button" href="https://www.clippingusa.com/free-trial/">get a quote</a>
+                </div>								
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="section">
+    <div class="Service__provider_sectinon">
+        <div class="Service__provider_sectinon--one">
+            <h4 class="secondary__heading clipping">
+              photo retouching
+            </h4>
+
+            <h2 class="secondary__clipping_heading">experience with quality & cost effective service.</h2>
+            <div class="service__provider_desc">
+              <div class="clipping-txt">
+                <p style="text-align: justify">Clipping USA is expertise on professional photo retouching service on photograph. Customers will get a picture upgrade benefits in mass for freelance photographer, weeding photography, photograph studios, visual creators and offices, advertisers agency, online business website proprietors, printing and distributing organizations, and some more. The cost is exceptionally focused and furthermore clients are getting something special from . So why not pass judgment on us for photo retouching service.</p>
+                <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Reasonable Price</p>
+                <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24"> Faster Turnaround</p>
+                <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Unique Quality</p>
+                <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="25" height="25">&nbsp;24/7 Service</p>
+
+        </div>
+                
+                <div class="every-page-button ">
+                    <a class="service__provider_section-button" href="https://www.clippingusa.com/free-trial/">get a quote</a>
+                </div>								
+            </div>
+        </div>
+        
+        <div class="Service__provider_sectinon--two">
+          <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img src="./ClippingUSAClone/assets/photo-retouching-before-ClippingUSA.png" >
+            </div>
+            <div class="img-comp-img img-comp-overlay">
+              <img src="./ClippingUSAClone/assets/photo-retouching-after-ClippingUSA.png" >
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+  <div class="shadow__service_container">
+      <div class="shadow__service_one">
+        <div class="img-comp-container">
+          <div class="img-comp-img">
+            <img src="./ClippingUSAClone/assets/Neck-join-before-Clipping-USA.png" >
+          </div>
+          <div class="img-comp-img img-comp-overlay">
+            <img src="./ClippingUSAClone/assets/Neck-join-after-Clipping-USA.png" >
+          </div>
+        </div>
+      </div>
+      <div class="shadow__service_two">
+        <h4 class="secondary__heading clipping">
+          Neck join
+        </h4>
+
+        <h2 class="secondary__clipping_heading">experience with quality & cost effective service.</h2>
+        <div class="service__provider_desc">
+          <div class="clipping-txt">
+            <p style="text-align: justify">Clipping USA offers neck joint service to remove mannequin from image, ghost manipulation, ghost mannequin, neck joint by Photoshop utilizing specialists in visual computerization. This service have been utilized by online retailers, eCommerce Photography, stock photography organizations andonline eCommerce store owners,internet business shop proprietors, stock photographyeCommerce shop owners and online product sellers, eBay, amazon and other affiliate marketers.</p>
+            <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Reasonable Price</p>
+            <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24"> Faster Turnaround</p>
+            <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;Unique Quality</p>
+            <p style="text-align: justify"><img class="alignnone wp-image-539" src="https://www.clippingusa.com/wp-content/uploads/2019/01/tick-icon-Clipping-USA-300x300.png" alt="" width="24" height="24">&nbsp;24/7 Service</p>
+            
+
+
+    </div>
+            
+            <div class="every-page-button ">
+                <a class="service__provider_section-button" href="https://www.clippingusa.com/free-trial/">get a quote</a>
+            </div>								
+        </div>
+      </div>
+  </div>
+</div>
+<div class="bottom_divider"></div>
+<div class="full__screen">
+  <div class="heading_section">
+    <h1 class="heading">
+      Photo Retouching Services
+    </h1>
+</div>
+<div class="retouching__service_container">
+  <div class="retouching__service">
+    <div class="border_left"></div>
+    <div class="retouching__service_content">
+      <h4 class="retouching__service_heading">Real Estate Photography Retouching</h4>
+      <p class="retouching__service_dec">Our Real Estate Photography Retouching service include an enticing environment, legitimate lighting, and exact scale to your land photographs which will undoubtedly pull in property seekers. To increase more business sales it should be taken the advantage of quality service.</p>
+    </div>
+    <div class="border_right"></div>
+  </div>
+  <div class="retouching__service">
+    <div class="border_left"></div>
+    <div class="retouching__service_content">
+      <h4 class="retouching__service_heading">Real Estate Photography Retouching</h4>
+      <p class="retouching__service_dec">Our Real Estate Photography Retouching service include an enticing environment, legitimate lighting, and exact scale to your land photographs which will undoubtedly pull in property seekers. To increase more business sales it should be taken the advantage of quality service.</p>
+    </div>
+    <div class="border_right"></div>
+  </div>
+  <div class="retouching__service">
+    <div class="border_left"></div>
+    <div class="retouching__service_content">
+      <h4 class="retouching__service_heading">Real Estate Photography Retouching</h4>
+      <p class="retouching__service_dec">Our Real Estate Photography Retouching service include an enticing environment, legitimate lighting, and exact scale to your land photographs which will undoubtedly pull in property seekers. To increase more business sales it should be taken the advantage of quality service.</p>
+    </div>
+    <div class="border_right"></div>
+  </div>
+  <div class="retouching__service">
+    <div class="border_left"></div>
+    <div class="retouching__service_content">
+      <h4 class="retouching__service_heading">Real Estate Photography Retouching</h4>
+      <p class="retouching__service_dec">Our Real Estate Photography Retouching service include an enticing environment, legitimate lighting, and exact scale to your land photographs which will undoubtedly pull in property seekers. To increase more business sales it should be taken the advantage of quality service.</p>
+    </div>
+    <div class="border_right"></div>
+  </div>
+  <div class="retouching__service">
+    <div class="border_left"></div>
+    <div class="retouching__service_content">
+      <h4 class="retouching__service_heading">Real Estate Photography Retouching</h4>
+      <p class="retouching__service_dec">Our Real Estate Photography Retouching service include an enticing environment, legitimate lighting, and exact scale to your land photographs which will undoubtedly pull in property seekers. To increase more business sales it should be taken the advantage of quality service.</p>
+    </div>
+    <div class="border_right"></div>
+  </div>
+  <div class="retouching__service">
+    <div class="border_left"></div>
+    <div class="retouching__service_content">
+      <h4 class="retouching__service_heading">Real Estate Photography Retouching</h4>
+      <p class="retouching__service_dec">Our Real Estate Photography Retouching service include an enticing environment, legitimate lighting, and exact scale to your land photographs which will undoubtedly pull in property seekers. To increase more business sales it should be taken the advantage of quality service.</p>
+    </div>
+    <div class="border_right"></div>
+  </div>
+  
+</div>
+</div>
+<div class="bottom_divider"></div>
+
+<div class="full__screen">
+  <div class="procedure__container">
+    <div class="procedure_left">
+      <h1 class="procedure__heading">
+        Working procedures & disposal
+      </h1>
+      <div class="procedure_desc"> <p style="text-align: justify">We give the special importance to the things are related to clients demands. Customers always expect a unique service that we offer and provide with the touch of service that best suits you and your project. Some customers will request solutions through the schematic style, and others will demand a full edited file with detailing. We pay attention to you and provide precisely what you exactly need.</p><p style="text-align: justify">We continue steadily to prefer direct, personally get in touch with as the easiest method to work and offer support. We don’t like hiding behind a screen - we prefer to display who we are and how exactly we are in full.</p> </div>
+    </div>
+    <div class="procedure_right">
+      <img src="./ClippingUSAClone/assets/clipping_path_application.png" alt="" class="procedure_img">
+    </div>
+
+  </div>
+</div>
+<div class=" ecommerce_section">
+  <div class="ecommerce__texts ">
+    <h2 class="ecommerce_heading">Increasing Sales and Driving Deals with Substance in Online business:</h2>
+   <div class="ecommerce_desc">
+    <p style="text-align: justify">Amazon is a worldwide innovation organization centering in web based business. It is the biggest web based business company as estimated by income and market capitalization.</p>
+    <p style="text-align: justify">Internet business stores are turning into a fever now days, moving electronic items, clothing, furniture, nourishment, toys and gems and huge amounts of different items. Be that as it may, everybody passes up "utilizing upgraded item pictures"; which on occasion costs them truly. Redistributing item picture altering to specialists could enable them to set up enhanced pictures on Internet business. Online stores can't give that genuine shopping background and subsequently; they draw in the feeling of sight without bounds. The client can't grasp the item, smell its aroma or feel its surfaces thus they additionally take obtaining choices absolutely dependent on the all-around altered item pictures of the items they are.</p>
+   </div>
+  </div>
+
+</div>
+<div class="bottom_divider"></div>
+<div class="section partner__section">
+   <h2 class="partner__heading">Our awesome partners</h2>
+   <section class="client">
+        <div class="carousel-client">
+          <div class="slide"><img class="client__img" src="./ClippingUSAClone/assets/company-logo-1.png"></div>
+          <div class="slide"><img class="client__img" src="./ClippingUSAClone/assets/company-logo-2.png"></div>
+          <div class="slide"><img class="client__img" src="./ClippingUSAClone/assets/company-logo-3.png"></div>
+          <div class="slide"><img class="client__img" src="./ClippingUSAClone/assets/company-logo-4.png"></div>
+          <div class="slide"><img class="client__img" src="./ClippingUSAClone/assets/amazon.jpg"></div>
+          <div class="slide"><img class="client__img" src="./ClippingUSAClone/assets/Rangs-Power.jpg"></div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="footer">
+ 
+    <div class="footer__container">
+      <div class="footer__top">
+        <div class="main__menu">
+          <div class="">
+            <h2 class="footer__heading">Main Menu</h2>
+          <div class="footer-line"></div>
+          </div>
+          <div class="footer__manu_links">
+            <a href="#" class="footer__menu_link">Home</a>
+            <a href="#" class="footer__menu_link">Free Trial</a>
+            <a href="#" class="footer__menu_link">Upload</a>
+            <a href="#" class="footer__menu_link">prices</a>
+            <a href="#" class="footer__menu_link">blog</a>
+            <a href="#" class="footer__menu_link">Contact Us</a>
+          </div>
+        </div>
+        <div class="our__services">
+          <div class="">
+            <h2 class="footer__heading">Our Services</h2>
+          <div class="footer-line"></div>
+          </div>
+          <div class="footer__manu_links">
+            <a href="#" class="footer__menu_link">Clipping path service provider</a>
+            <a href="#" class="footer__menu_link">Photoshop Masking</a>
+            <a href="#" class="footer__menu_link">Photo Retouching Service | Edit Photos Online by Photoshop Experts.</a>
+            <a href="#" class="footer__menu_link">Reflection Shadow Service</a>
+            <a href="#" class="footer__menu_link">Neck Joint And Ghost Mannequin Service</a>
+            <a href="#" class="footer__menu_link">FAQ</a>
+          </div>
+        </div>
+        <div class="more__link">
+          <div class="">
+            <h2 class="footer__heading">More  Links</h2>
+          <div class="footer-line"></div>
+          </div>
+          <div class="footer__manu_links">
+            <a href="#" class="footer__menu_link">Natural Shadow</a>
+            <a href="#" class="footer__menu_link">Drop Shadow Photoshop Service</a>
+            <a href="#" class="footer__menu_link">Bulk Professional Color Correction Service</a>
+            <a href="#" class="footer__menu_link">Handmade Vector Conversion service</a>
+          </div>
+        </div>
+        <div class="contact__us">
+          <div class="middle__heading">
+            <h2 class="footer__heading ">More  Links</h2>
+            <ul class="footer__ul">
+              <li class=""><a href="#"><i class="fab fa-facebook-f footer__social"></i></a></li>
+              <li><a href="#"><i class="fab fa-google-plus-g footer__social"></i></a></li>
+              <li><a href="#"><i class="fab  fa-twitter footer__social"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in footer__social"></i></a></li>
+              <li><a href="#"><i class="fab fa-youtube footer__social"></i></a></li>
+          </ul>
+          <img style="width: 100%;" src="./ClippingUSAClone/assets/Payment_ClippingUSA.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="bottom_divider"></div>
+      <div class="footer__bottom">
+        <div class="main__menu">
+          <div class="">
+            <h2 class="footer__heading">Mailing Address</h2>
+          <div class="footer-line"></div>
+          </div>
+          <div class="footer__manu_links">
+            <p class="footer__menu_link line__height">P.O BOX; 10623 <br> 12336 La Plata St, SILVER SPRING, MD. 20904 <br> UNITED STATES.</p>
+            <p class="footer__menu_link"> <i class="fas fa-envelope"></i> info@clippingusa.com </p>
+            <p class="footer__menu_link"> <i class="fas fa-phone"></i> +1 240 918 9262, +1 (301) 310 6411</p>
+ 
+          </div>
+        </div>
+        <div class="main__menu">
+          <div class="">
+            <h2 class="footer__heading">Production Facility</h2>
+          <div class="footer-line"></div>
+          </div>
+          <div class="footer__manu_links">
+            <p class="footer__menu_link line__height">HOUSE # 12, ROAD # 03, <br> SECTOR # 10, UTTARA, DHAKA-1230,<br> BANGLADESH.</p>
+            <p class="footer__menu_link"> <i class="fas fa-envelope"></i> info@clippingusa.com </p>
+            <p class="footer__menu_link"> <i class="fas fa-phone"></i> +1 240 918 9262, +1 (301) 310 6411</p>
+ 
+          </div>
+        </div>
+        <div class="main__menu">
+          <div class="">
+            <h2 class="footer__heading">Physical Address</h2>
+          <div class="footer-line"></div>
+          </div>
+          <div class="footer__manu_links">
+            <p class="footer__menu_link line__height">12601 SUMMERWOOD DR, <br>
+              SILVER SPRING, MD, 20904 <br>UNITED STATES.</p>
+            <p class="footer__menu_link"> <i class="fas fa-envelope"></i> info@clippingusa.com </p>
+            <p class="footer__menu_link"> <i class="fas fa-phone"></i> +1 240 918 9262, +1 (301) 310 6411</p>
+ 
+          </div>
+        </div>
+        
+       
+      </div>
+    </div>
+
+</div>
+<div class="footer__bottom_section">
+  <div class="footer_bootom_1">
+    <p>Copyright © 2024 Clipping USA</a></p>
+  </div>
+  <div class="footer_bottom_2"></div>
+  <div class="footer_bottom_3"></div>
+</div>
+<script>
+  $(".carousel-client").bxSlider({
+  auto: true,
+  slideWidth: 300,
+  minSlides: 2,
+  maxSlides: 4,
+  controls: false
+});
+
+</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      /*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+      initComparisons();
+      </script>
+      <script>
+        const dropArea = document.getElementById('dropArea');
+        const fileInput = document.getElementById('fileInput');
+    
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false)
+        });
+    
+        // Highlight drop area when dragging over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, highlight, false)
+        });
+    
+        // Unhighlight drop area when dragging leaves it
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, unhighlight, false)
+        });
+    
+        // Handle dropped files
+        dropArea.addEventListener('drop', handleDrop, false);
+    
+        function preventDefaults(event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    
+        function highlight() {
+            dropArea.classList.add('highlight');
+        }
+    
+        function unhighlight() {
+            dropArea.classList.remove('highlight');
+        }
+    
+        function handleDrop(event) {
+            let dt = event.dataTransfer;
+            let files = dt.files;
+    
+            handleFiles(files);
+        }
+    
+        function uploadFile() {
+            fileInput.click();
+        }
+    
+        function handleFiles(files) {
+            // Handle uploaded files here
+            console.log(files);
+        }
+    </script>
+      <script>
+       document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.images img');
+    const maxImagesToShow = 8;
+
+    // Function to show or hide images based on index
+    function toggleImages(filter = 'all') {
+        let count = 0;
+        images.forEach((img, index) => {
+            if (filter === 'all' || img.classList.contains(filter)) {
+                if (count < maxImagesToShow) {
+                    img.style.display = 'block';
+                    count++;
+                } else {
+                    img.style.display = 'none';
+                }
+            } else {
+                img.style.display = 'none';
+            }
+        });
+    }
+
+
+    toggleImages();
+
+    document.querySelectorAll('.filter-btn').forEach(item => {
+        item.addEventListener('click', event => {
+            const filter = event.target.dataset.filter;
+            toggleImages(filter);
+        });
+    });
+});
+    </script>
+    <script>
+       function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+  document.getElementById("tab1").style.display = "block";
+      </script>
+    <script src="./ClippingUSAClone/script.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <script>
+ document.addEventListener("DOMContentLoaded", function() {
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  accordionHeaders.forEach(header => {
+    header.addEventListener("click", function() {
+      const accordionItem = this.parentNode;
+      const isActive = accordionItem.classList.contains("active__accordion");
+      closeAllAccordionItems();
+      if (!isActive) {
+        accordionItem.classList.add("active__accordion");
+        const content = this.nextElementSibling;
+        content.style.maxHeight = content.scrollHeight + "px";
+        this.querySelector(".accordion-icon").textContent = "-";
+      }
+    });
+  });
+
+  function closeAllAccordionItems() {
+    const accordionItems = document.querySelectorAll(".accordion-item");
+    accordionItems.forEach(item => {
+      item.classList.remove("active__accordion");
+      const content = item.querySelector(".accordion-content");
+      content.style.maxHeight = null;
+      const header = item.querySelector(".accordion-header");
+      header.querySelector(".accordion-icon").textContent = "+";
+    });
+  }
+
+  // Open the first accordion item by default
+  const firstAccordionItem = document.querySelector(".accordion-item:first-child");
+  if (firstAccordionItem) {
+    firstAccordionItem.classList.add("active__accordion");
+    const firstContent = firstAccordionItem.querySelector(".accordion-content");
+    firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+    const firstHeader = firstAccordionItem.querySelector(".accordion-header");
+    firstHeader.querySelector(".accordion-icon").textContent = "-";
+  }
+});
+</script>
+
+    
+ <script src="./ClippingUSAClone/before_after.js"></script> 
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+   
+</body>
+</html>
